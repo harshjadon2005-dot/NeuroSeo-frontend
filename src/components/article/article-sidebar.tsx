@@ -1,6 +1,7 @@
 import type { ResourcePost } from '@/lib/resource-data';
 import { TableOfContents } from './table-of-contents';
-import { MessageSquare, Mail, Link2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 interface ArticleSidebarProps {
   post: ResourcePost;
@@ -11,39 +12,27 @@ export function ArticleSidebar({ post }: ArticleSidebarProps) {
     <div className="space-y-8">
       <TableOfContents />
 
-      {/* Share Section */}
-      <div className="rounded-2xl border border-border/80 bg-white p-6 shadow-sm">
-        <div className="mb-4 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-          Share this article
+      {/* InboxKit style Dark CTA */}
+      <div className="rounded-2xl bg-[#0f172a] p-8 text-white shadow-xl border border-slate-800">
+        <div className="flex items-center gap-2 mb-4">
+          <div className="h-6 w-6 rounded-md bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30">
+            <div className="h-3 w-3 rounded-sm bg-emerald-400" />
+          </div>
+          <span className="font-bold tracking-tight">NeuroSEO</span>
         </div>
-        <div className="flex gap-2">
-          <button className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-muted/30 text-muted-foreground transition-colors hover:bg-[#103938] hover:text-white">
-            <MessageSquare className="h-4 w-4" />
-          </button>
-          <button className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-muted/30 text-muted-foreground transition-colors hover:bg-[#103938] hover:text-white">
-            <Mail className="h-4 w-4" />
-          </button>
-          <button className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-muted/30 text-muted-foreground transition-colors hover:bg-[#103938] hover:text-white">
-            <Link2 className="h-4 w-4" />
-          </button>
-        </div>
-      </div>
+        
+        <p className="text-slate-300 text-[13px] leading-relaxed font-medium">
+          Plans from $99/mo for unlimited AI articles. Scale with Agency and Enterprise tiers.
+        </p>
 
-      {/* Tags Section */}
-      {post.tags.length > 0 && (
-        <div className="rounded-2xl border border-border/80 bg-white p-6 shadow-sm">
-          <div className="mb-4 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-            Tags
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {post.tags.map(tag => (
-              <span key={tag} className="rounded-md bg-muted px-2.5 py-1 text-xs font-semibold text-muted-foreground">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
+        <Link 
+          href="/pricing"
+          className="mt-6 flex w-full items-center justify-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-bold text-slate-900 transition-colors hover:bg-slate-100"
+        >
+          Get Started
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
     </div>
   );
 }

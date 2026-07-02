@@ -8,8 +8,9 @@ import { ArticleSidebar } from '@/components/article/article-sidebar';
 import { ReadingProgress } from '@/components/article/reading-progress';
 import { CaseStudyBlocks } from '@/components/article/templates/case-study-blocks';
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   
   if (!post || post.category !== 'case-studies') {
     return { title: 'Not Found' };
@@ -28,8 +29,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function CaseStudyArticlePage({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export default async function CaseStudyArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post || post.category !== 'case-studies') {
     notFound();
@@ -38,8 +40,8 @@ export default function CaseStudyArticlePage({ params }: { params: { slug: strin
   return (
     <>
       <ReadingProgress />
-      <ArticleHero post={post} categoryLabel="Case Studies" />
       <ArticleLayout sidebar={<ArticleSidebar post={post} />}>
+        <ArticleHero post={post} categoryLabel="Case Studies" />
         <CaseStudyBlocks post={post} />
         <ArticleContent content={post.content} />
       </ArticleLayout>

@@ -10,8 +10,9 @@ import { ReadingProgress } from '@/components/article/reading-progress';
 // Mock generateStaticParams if we were building statically
 // export function generateStaticParams() { ... }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   
   if (!post || post.category !== 'learn') {
     return { title: 'Not Found' };
@@ -35,8 +36,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function LearnArticlePage({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export default async function LearnArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post || post.category !== 'learn') {
     notFound();
@@ -45,8 +47,8 @@ export default function LearnArticlePage({ params }: { params: { slug: string } 
   return (
     <>
       <ReadingProgress />
-      <ArticleHero post={post} categoryLabel="Learn" />
       <ArticleLayout sidebar={<ArticleSidebar post={post} />}>
+        <ArticleHero post={post} categoryLabel="Learn" />
         <ArticleContent content={post.content} />
       </ArticleLayout>
     </>

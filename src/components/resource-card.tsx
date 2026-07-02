@@ -17,6 +17,8 @@ export interface ResourceItem {
   previewText?: string[];
 }
 
+import Link from 'next/link';
+
 export function ResourceGrid({ lessons }: { lessons: ResourceItem[] }) {
   const [activeId, setActiveId] = useState<string | null>(null);
   const activeItem = lessons.find(l => l.id === activeId);
@@ -40,16 +42,22 @@ export function ResourceGrid({ lessons }: { lessons: ResourceItem[] }) {
     <>
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {lessons.map((lesson) => (
-          <ResourceCard
-            key={lesson.id}
-            item={lesson}
-            onClick={() => setActiveId(lesson.id)}
-          />
+          lesson.href ? (
+            <Link key={lesson.id} href={lesson.href} className="block">
+              <ResourceCard item={lesson} />
+            </Link>
+          ) : (
+            <ResourceCard
+              key={lesson.id}
+              item={lesson}
+              onClick={() => setActiveId(lesson.id)}
+            />
+          )
         ))}
       </div>
 
       <AnimatePresence>
-        {activeItem && (
+        {activeItem && !activeItem.href && (
           <ExpandedModal item={activeItem} onClose={() => setActiveId(null)} />
         )}
       </AnimatePresence>
@@ -57,10 +65,10 @@ export function ResourceGrid({ lessons }: { lessons: ResourceItem[] }) {
   );
 }
 
-function ResourceCard({ item, onClick }: { item: ResourceItem; onClick: () => void }) {
+function ResourceCard({ item, onClick }: { item: ResourceItem; onClick?: () => void }) {
   return (
     <motion.div
-      layoutId={`card-${item.id}`}
+      layoutId={onClick ? `card-${item.id}` : undefined}
       onClick={onClick}
       className="group flex h-[460px] cursor-pointer flex-col overflow-hidden rounded-[20px] border border-border bg-white shadow-sm transition-all duration-300 hover:-translate-y-[6px] hover:border-emerald-500/30 hover:shadow-xl hover:shadow-black/5"
     >

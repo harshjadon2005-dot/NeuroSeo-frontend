@@ -46,26 +46,27 @@ export function TableOfContents() {
   if (headings.length === 0) return null;
 
   return (
-    <div className="rounded-2xl border border-border/80 bg-white p-6 shadow-sm">
-      <div className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-        <ListTree className="h-4 w-4" />
+    <div className="pb-8">
+      <div className="mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-muted-foreground/80">
+        <ListTree className="h-3.5 w-3.5 opacity-50" />
         <span>On this page</span>
       </div>
-      <nav className="space-y-3 relative before:absolute before:inset-y-0 before:left-[5px] before:w-px before:bg-border/50">
+      <nav className="relative before:absolute before:inset-y-0 before:left-0 before:w-px before:bg-border/60">
         {headings.map((heading) => (
           <a
             key={heading.id}
             href={`#${heading.id}`}
             className={cn(
-              "block text-sm transition-colors relative pl-4",
-              heading.level === 3 ? "ml-3" : "",
+              "block text-[13px] py-1.5 transition-colors relative pl-4 border-l border-transparent hover:text-foreground",
+              heading.level === 3 && "pl-8",
               activeId === heading.id 
-                ? "font-bold text-[#103938] before:absolute before:left-[-3px] before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-[#103938]" 
-                : "font-medium text-muted-foreground hover:text-foreground"
+                ? "text-[#103938] font-semibold border-[#103938] bg-[#103938]/5" 
+                : "text-muted-foreground"
             )}
             onClick={(e) => {
               e.preventDefault();
               document.getElementById(heading.id)?.scrollIntoView({ behavior: 'smooth' });
+              window.history.pushState(null, '', `#${heading.id}`);
             }}
           >
             {heading.text}

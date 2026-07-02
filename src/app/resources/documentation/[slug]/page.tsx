@@ -7,8 +7,9 @@ import { ArticleContent } from '@/components/article/article-content';
 import { ArticleSidebar } from '@/components/article/article-sidebar';
 import { ReadingProgress } from '@/components/article/reading-progress';
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   
   if (!post || post.category !== 'documentation') {
     return { title: 'Not Found' };
@@ -27,8 +28,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function DocumentationArticlePage({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export default async function DocumentationArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post || post.category !== 'documentation') {
     notFound();
@@ -37,8 +39,8 @@ export default function DocumentationArticlePage({ params }: { params: { slug: s
   return (
     <>
       <ReadingProgress />
-      <ArticleHero post={post} categoryLabel="Documentation" />
-      <ArticleLayout sidebarPosition="left" sidebar={<ArticleSidebar post={post} />}>
+      <ArticleLayout sidebarPosition="left" sidebar={<ArticleSidebar post={post} />
+        <ArticleHero post={post} categoryLabel="Documentation" />}>
         <ArticleContent content={post.content} />
       </ArticleLayout>
     </>
