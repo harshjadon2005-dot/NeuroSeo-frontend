@@ -33,7 +33,7 @@ export function RoadmapCard({
       layoutId={`card-${item.id}`}
       onClick={onClick}
       className={cn(
-        "group relative flex flex-col gap-4 rounded-3xl border bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer overflow-hidden",
+        "group relative flex flex-col gap-4 rounded-3xl border bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer overflow-hidden h-full",
         item.status === 'building' ? "border-blue-200 hover:border-blue-300 hover:shadow-blue-500/10" : "border-border/60 hover:border-border hover:shadow-black/5",
         item.status === 'shipped' ? "hover:border-emerald-200 hover:shadow-emerald-500/5" : ""
       )}

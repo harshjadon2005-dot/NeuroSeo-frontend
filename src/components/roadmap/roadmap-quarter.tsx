@@ -36,6 +36,7 @@ export function QuarterSection({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+            className="h-full"
           >
             <RoadmapCard item={item} onClick={() => onCardClick(item)} />
           </motion.div>
