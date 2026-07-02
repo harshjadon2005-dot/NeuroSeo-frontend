@@ -52,7 +52,7 @@ export function SiteHeader() {
           >
             Sign in
           </Link>
-          <Button href="/signup">
+          <Button href="/register">
             Start free
           </Button>
         </div>
@@ -85,7 +85,7 @@ export function SiteHeader() {
               <Button href="/login" variant="outline">
                 Sign in
               </Button>
-              <Button href="/signup">
+              <Button href="/register">
                 Start free
               </Button>
             </div>

@@ -39,8 +39,8 @@ export default async function DocumentationArticlePage({ params }: { params: Pro
   return (
     <>
       <ReadingProgress />
-      <ArticleLayout sidebarPosition="left" sidebar={<ArticleSidebar post={post} />
-        <ArticleHero post={post} categoryLabel="Documentation" />}>
+      <ArticleLayout sidebarPosition="left" sidebar={<ArticleSidebar post={post} />}>
+        <ArticleHero post={post} categoryLabel="Documentation" />
         <ArticleContent content={post.content} />
       </ArticleLayout>
     </>
