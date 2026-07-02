@@ -8,8 +8,9 @@ import { ArticleSidebar } from '@/components/article/article-sidebar';
 import { ReadingProgress } from '@/components/article/reading-progress';
 import { AlternativesBlocks } from '@/components/article/templates/alternatives-blocks';
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   
   if (!post || post.category !== 'alternatives') {
     return { title: 'Not Found' };
@@ -28,8 +29,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function AlternativesArticlePage({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export default async function AlternativesArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post || post.category !== 'alternatives') {
     notFound();
@@ -38,8 +40,8 @@ export default function AlternativesArticlePage({ params }: { params: { slug: st
   return (
     <>
       <ReadingProgress />
-      <ArticleHero post={post} categoryLabel="Alternatives" />
       <ArticleLayout sidebar={<ArticleSidebar post={post} />}>
+        <ArticleHero post={post} categoryLabel="Alternatives" />
         <ArticleContent content={post.content} />
         <AlternativesBlocks post={post} />
       </ArticleLayout>

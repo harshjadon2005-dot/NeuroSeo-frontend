@@ -29,17 +29,17 @@ const MEGA_MENU_DATA = [
   {
     title: 'LEARN',
     items: [
-      { label: 'SEO Fundamentals', desc: 'Core principles of search optimization', href: '/resources/seo-fundamentals', icon: BookOpen },
-      { label: 'GEO Fundamentals', desc: 'Mastering AI Answer Engines', href: '/resources/geo-fundamentals', icon: Map },
-      { label: 'Keyword Research', desc: 'Find intent-driven opportunities', href: '/resources/keyword-research', icon: Search },
-      { label: 'AI Writing', desc: 'Generate rank-ready content', href: '/resources/ai-writing', icon: Edit3 },
+      { label: 'The Complete Guide to GEO', desc: 'Mastering AI Answer Engines', href: '/resources/learn/complete-guide-to-geo', icon: BookOpen },
+      { label: 'Write Content That Ranks in 2026', desc: 'Core principles of search optimization', href: '/resources/learn/write-content-that-ranks-2026', icon: Map },
+      { label: 'Keyword Research', desc: 'Find intent-driven opportunities', href: '/resources/learn/keyword-research', icon: Search },
+      { label: 'AI Writing', desc: 'Generate rank-ready content', href: '/resources/learn/ai-writing', icon: Edit3 },
     ],
     viewAll: { label: 'View all Learn', href: '/resources/learn' }
   },
   {
     title: 'COMPARE',
     items: [
-      { label: 'NeuroSEO vs Surfer SEO', desc: 'Next-gen vs legacy tools', href: '/resources/compare/surfer-seo', icon: Scale },
+      { label: 'NeuroSEO vs Surfer SEO', desc: 'Next-gen vs legacy tools', href: '/resources/compare/neuroseo-vs-surfer-seo', icon: Scale },
       { label: 'NeuroSEO vs Jasper', desc: 'SEO-focused vs general AI', href: '/resources/compare/jasper', icon: Scale },
       { label: 'NeuroSEO vs Frase', desc: 'Autonomous vs manual workflow', href: '/resources/compare/frase', icon: Scale },
       { label: 'NeuroSEO vs ChatGPT', desc: 'Data-driven vs generic output', href: '/resources/compare/chatgpt', icon: Scale },
@@ -49,7 +49,7 @@ const MEGA_MENU_DATA = [
   {
     title: 'ALTERNATIVES',
     items: [
-      { label: 'Surfer SEO Alternatives', desc: 'Find better optimization tools', href: '/resources/alternatives/surfer-seo', icon: Zap },
+      { label: 'Surfer SEO Alternatives', desc: 'Find better optimization tools', href: '/resources/alternatives/surfer-seo-alternatives', icon: Zap },
       { label: 'Jasper Alternatives', desc: 'Specialized writing platforms', href: '/resources/alternatives/jasper', icon: Zap },
       { label: 'Frase Alternatives', desc: 'Modern brief generators', href: '/resources/alternatives/frase', icon: Zap },
       { label: 'Copy.ai Alternatives', desc: 'Long-form content focus', href: '/resources/alternatives/copy-ai', icon: Zap },

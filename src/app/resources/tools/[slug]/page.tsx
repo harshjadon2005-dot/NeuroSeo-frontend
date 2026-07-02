@@ -7,8 +7,9 @@ import { ArticleContent } from '@/components/article/article-content';
 import { ArticleSidebar } from '@/components/article/article-sidebar';
 import { ReadingProgress } from '@/components/article/reading-progress';
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   
   if (!post || post.category !== 'tools') {
     return { title: 'Not Found' };
@@ -27,8 +28,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function ToolsArticlePage({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export default async function ToolsArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post || post.category !== 'tools') {
     notFound();
@@ -37,8 +39,8 @@ export default function ToolsArticlePage({ params }: { params: { slug: string } 
   return (
     <>
       <ReadingProgress />
-      <ArticleHero post={post} categoryLabel="Free Tools" />
       <ArticleLayout sidebar={<ArticleSidebar post={post} />}>
+        <ArticleHero post={post} categoryLabel="Free Tools" />
         <ArticleContent content={post.content} />
       </ArticleLayout>
     </>

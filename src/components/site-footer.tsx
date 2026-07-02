@@ -62,11 +62,14 @@ const COLUMNS = [
   {
     title: 'Resources',
     links: [
-      { href: '/resources/learn', label: 'Documentation' },
+      { href: '/resources/documentation', label: 'Documentation' },
       { href: '/resources/guide', label: 'Guides' },
-      { href: '/blog', label: 'Blog' },
+      { href: '/resources/learn', label: 'Learn' },
+      { href: '/resources/compare', label: 'Compare' },
+      { href: '/resources/alternatives', label: 'Alternatives' },
+      { href: '/resources/case-studies', label: 'Case Studies' },
+      { href: '/resources/tools', label: 'Free Tools' },
       { href: '/help', label: 'Help Center' },
-      { href: '/api-docs', label: 'API Docs' },
       { href: '/contact', label: 'Contact' },
     ],
   },

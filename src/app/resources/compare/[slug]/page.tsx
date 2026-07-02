@@ -8,8 +8,9 @@ import { ArticleSidebar } from '@/components/article/article-sidebar';
 import { ReadingProgress } from '@/components/article/reading-progress';
 import { CompareBlocks } from '@/components/article/templates/compare-blocks';
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   
   if (!post || post.category !== 'compare') {
     return { title: 'Not Found' };
@@ -28,8 +29,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function CompareArticlePage({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export default async function CompareArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post || post.category !== 'compare') {
     notFound();
@@ -38,8 +40,8 @@ export default function CompareArticlePage({ params }: { params: { slug: string 
   return (
     <>
       <ReadingProgress />
-      <ArticleHero post={post} categoryLabel="Compare" />
       <ArticleLayout sidebar={<ArticleSidebar post={post} />}>
+        <ArticleHero post={post} categoryLabel="Compare" />
         <ArticleContent content={post.content} />
         <CompareBlocks post={post} />
       </ArticleLayout>
