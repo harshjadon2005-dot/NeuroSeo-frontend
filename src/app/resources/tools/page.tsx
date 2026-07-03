@@ -71,11 +71,7 @@ export default function ToolsPage() {
           { name: 'Technical SEO', count: 5, href: '#' },
           { name: 'Content Analysis', count: 3, href: '#' },
         ],
-        trending: [
-          { title: 'Keyword Difficulty Checker', href: '#' },
-          { title: 'Robots.txt Generator', href: '#' },
-          { title: 'Schema Markup Builder', href: '#' },
-        ]
+        trending: remainingPosts.slice(0, 3).map(p => ({ title: p.title, href: `/resources/tools/${p.slug}` }))
       }}
       featured={{ post: featured as any, visual: ToolsMockup }}
       posts={remainingPosts}

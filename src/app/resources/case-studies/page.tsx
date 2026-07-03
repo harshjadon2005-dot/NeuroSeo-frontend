@@ -68,11 +68,7 @@ export default function CaseStudiesPage() {
           { name: 'Marketing Agencies', count: 18, href: '#' },
           { name: 'Ecommerce Brands', count: 12, href: '#' },
         ],
-        trending: [
-          { title: 'How AcmeCorp grew 340% in 3 months', href: '#' },
-          { title: 'Scaling agency output by 5x', href: '#' },
-          { title: 'Zero to 100k visitors for a startup', href: '#' },
-        ]
+        trending: remainingPosts.slice(0, 3).map(p => ({ title: p.title, href: `/resources/case-studies/${p.slug}` }))
       }}
       featured={{ post: featured, visual: CaseStudyMockup }}
       posts={remainingPosts}
