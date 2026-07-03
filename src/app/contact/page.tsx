@@ -1,55 +1,65 @@
 import type { Metadata } from 'next';
-import { Mail, MessageSquare, Building2 } from 'lucide-react';
 import { Container, SectionHeading } from '@/components/ui';
-import { Reveal } from '@/components/reveal';
-import { ContactForm } from './contact-form';
+import { ContactDashboard } from '@/components/contact-dashboard';
+import { FaqAccordion } from '@/components/faq-accordion';
 
 export const metadata: Metadata = {
   title: 'Contact us',
   description: 'Talk to the NeuroSEO team about plans, agency onboarding, or anything else.',
 };
 
-const CHANNELS = [
-  { icon: Mail, title: 'Email', value: 'hello@neuroseo.ai', desc: 'General questions & support' },
-  { icon: Building2, title: 'Sales', value: 'sales@neuroseo.ai', desc: 'Agency & enterprise plans' },
-  { icon: MessageSquare, title: 'Support', value: 'Avg. reply < 1 business day', desc: 'For active customers' },
-];
-
 export default function ContactPage() {
   return (
-    <section className="py-16 sm:py-24">
-      <Container>
-        <SectionHeading
-          eyebrow="Contact"
-          title="Let's talk"
-          sub="Questions about plans, agency onboarding, or a custom workflow? Send a note and we'll get back fast."
+    <section className="relative overflow-hidden bg-[#FAFAFA] py-16 sm:py-24 min-h-screen flex flex-col">
+      {/* Background Atmosphere */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[1000px] h-[600px] rounded-full bg-emerald-500/10 blur-[120px] opacity-80" />
+        <div 
+          className="absolute inset-0 opacity-[0.02]" 
+          style={{ backgroundImage: 'linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }} 
         />
+      </div>
 
-        <div className="mx-auto mt-14 grid max-w-5xl gap-8 lg:grid-cols-[1fr_1.3fr]">
-          {/* Channels */}
-          <div className="space-y-4">
-            {CHANNELS.map((c, i) => (
-              <Reveal key={c.title} delay={i * 60}>
-                <div className="flex items-start gap-4 rounded-2xl border border-border bg-white p-5">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#103938]/8">
-                    <c.icon className="h-5 w-5 text-[#103938]" />
-                  </span>
-                  <div>
-                    <h3 className="text-sm font-semibold text-foreground">{c.title}</h3>
-                    <p className="mt-0.5 text-sm font-medium text-[#103938]">{c.value}</p>
-                    <p className="mt-0.5 text-xs text-muted-foreground">{c.desc}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+      <Container className="flex-1 flex flex-col">
+        <div className="relative z-10 mb-12 sm:mb-16">
+          <SectionHeading
+            align="center"
+            eyebrow="Contact"
+            title="Let's build something together"
+            sub="Whether you need enterprise pricing, onboarding help, technical support, or product guidance, we're here to help."
+          />
+        </div>
 
-          {/* Form */}
-          <Reveal delay={120}>
-            <div className="rounded-3xl border border-border bg-white p-7 sm:p-8">
-              <ContactForm />
-            </div>
-          </Reveal>
+        <ContactDashboard />
+
+        {/* Contact FAQs */}
+        <div className="mt-24 mb-8">
+          <SectionHeading
+            align="center"
+            eyebrow="Common Questions"
+            title="Before you send that message"
+            sub="We've compiled some of the most common questions our support team receives."
+          />
+          <FaqAccordion 
+            faqs={[
+              {
+                q: "What is your typical response time?",
+                a: "We aim to reply within 1 business day for all standard inquiries. If you are on an Enterprise plan, your dedicated account manager will respond within 2 hours during business hours."
+              },
+              {
+                q: "Can I request a custom Enterprise plan?",
+                a: "Absolutely. If you have unique volume requirements, need custom LLM fine-tuning, or require specific SLA guarantees, please select 'Sales' in the form above and we'll design a custom package for you."
+              },
+              {
+                q: "Do you offer technical support for API integrations?",
+                a: "Yes. Our core engineering team provides direct technical support for custom CMS integrations, API usage, and Webhook configuration for users on our Pro and Enterprise tiers."
+              },
+              {
+                q: "I run an agency. Can I white-label NeuroSEO?",
+                a: "Yes! Our Agency tier includes full white-labeling capabilities, allowing you to generate reports, SERP analysis dashboards, and content drafts with your own branding to present directly to clients."
+              }
+            ]} 
+          />
         </div>
       </Container>
     </section>

@@ -20,7 +20,7 @@ export function CtaSection() {
                 Your first articles are on us. Connect a site, pick a keyword, and watch NeuroSEO research, write, and publish.
               </p>
               <div className="mt-8 flex justify-center">
-                <Button href={`${APP_URL}/signup`} external size="lg" variant="outline" className="border-0 bg-white text-[#103938] hover:bg-white/90">
+                <Button href="/register" size="lg" variant="outline" className="border-0 bg-white text-[#103938] hover:bg-white/90">
                   Create your free account
                   <ArrowRight className="h-4 w-4" />
                 </Button>

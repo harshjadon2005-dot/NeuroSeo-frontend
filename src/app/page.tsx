@@ -7,26 +7,68 @@ import {
   Bot,
   Building2,
   Check,
+  CheckCircle2,
   X,
   Quote,
   Store,
   Cpu,
   Briefcase,
   Newspaper,
+  Clock,
+  TrendingUp,
+  Globe,
+  DollarSign,
 } from 'lucide-react';
 import Link from 'next/link';
 import { Container, Button, Eyebrow, SectionHeading } from '@/components/ui';
 import { Reveal } from '@/components/reveal';
-import { CtaSection } from '@/components/cta-section';
+import { HeroSection } from '@/components/hero-section';
+import { InteractiveCta } from '@/components/interactive-cta';
+import { WorkflowComparison } from '@/components/workflow-comparison';
 import { APP_URL } from '@/lib/utils';
+import { NumberTicker } from '@/components/number-ticker';
+import { Marquee3D } from '@/components/marquee-3d';
+import { PipelinePath } from '@/components/pipeline-path';
+import { TestimonialsMarquee } from '@/components/testimonials-marquee';
+import { FaqInteractive } from '@/components/faq-interactive';
 
 const FEATURES = [
-  { icon: Search, title: 'Keyword intelligence', desc: 'Real search volume, difficulty, and SERP data from DataForSEO. Auto-discovers content gaps and ranking decay.' },
-  { icon: PenLine, title: 'Ranking content', desc: 'An 18-stage pipeline researches, outlines, drafts, and optimizes long-form articles with internal links and FAQ schema.' },
-  { icon: ShieldCheck, title: 'Trust & originality', desc: 'Plagiarism, AI-detection, and fact verification gates run before anything reaches your review queue.' },
-  { icon: Rocket, title: 'One-click publish', desc: 'Push approved articles straight to WordPress, Webflow, Shopify, or any headless CMS via signed webhooks.' },
-  { icon: Bot, title: 'AI visibility (GEO)', desc: 'Track whether ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews cite your brand.' },
-  { icon: Building2, title: 'Agency-ready', desc: 'Multi-workspace, team roles, branded PDF client reports, a public API, and outbound webhooks.' },
+  { 
+    icon: Search, 
+    title: 'Keyword intelligence', 
+    desc: 'Discover profitable keywords using live search data.',
+    bullets: ['Search Volume', 'Keyword Difficulty', 'SERP Analysis', 'Competitor Gaps']
+  },
+  { 
+    icon: PenLine, 
+    title: 'Ranking content', 
+    desc: 'An 18-stage pipeline to research, write, and optimize.',
+    bullets: ['Automated Outlines', 'Long-form Drafts', 'Internal Linking', 'FAQ Schema']
+  },
+  { 
+    icon: ShieldCheck, 
+    title: 'Trust & originality', 
+    desc: 'Automated verification before reaching your queue.',
+    bullets: ['Plagiarism Checks', 'AI-Detection Gates', 'Fact Verification', 'SEO Readiness']
+  },
+  { 
+    icon: Rocket, 
+    title: 'One-click publish', 
+    desc: 'Push approved drafts instantly to your tech stack.',
+    bullets: ['WordPress & Webflow', 'Shopify Integration', 'Headless CMS Ready', 'Signed Webhooks']
+  },
+  { 
+    icon: Bot, 
+    title: 'AI visibility (GEO)', 
+    desc: 'Monitor your brand presence across major AI engines.',
+    bullets: ['ChatGPT & Claude', 'Google AI Overviews', 'Perplexity Tracking', 'Brand Mentions']
+  },
+  { 
+    icon: Building2, 
+    title: 'Agency-ready', 
+    desc: 'Scale operations across multiple clients and teams.',
+    bullets: ['Multi-Workspace', 'Team Roles', 'Branded Client Reports', 'Public API']
+  },
 ];
 
 const PIPELINE = [
@@ -35,16 +77,17 @@ const PIPELINE = [
 ];
 
 const TRUST = [
-  'DataForSEO', 'WordPress', 'Webflow', 'Shopify', 'Google Search Console',
-  'Anthropic', 'Perplexity', 'Stripe',
+  { name: 'DataForSEO', iconUrl: 'https://www.google.com/s2/favicons?domain=dataforseo.com&sz=128' },
+  { name: 'WordPress', iconUrl: 'https://www.google.com/s2/favicons?domain=wordpress.org&sz=128' },
+  { name: 'Webflow', iconUrl: 'https://www.google.com/s2/favicons?domain=webflow.com&sz=128' },
+  { name: 'Shopify', iconUrl: 'https://www.google.com/s2/favicons?domain=shopify.com&sz=128' },
+  { name: 'Google Search Console', iconUrl: 'https://www.google.com/s2/favicons?domain=google.com&sz=128' },
+  { name: 'Anthropic', iconUrl: 'https://www.google.com/s2/favicons?domain=anthropic.com&sz=128' },
+  { name: 'Perplexity', iconUrl: 'https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128' },
+  { name: 'Stripe', iconUrl: 'https://www.google.com/s2/favicons?domain=stripe.com&sz=128' },
 ];
 
-const STATS = [
-  { value: '18', label: 'Quality stages per article' },
-  { value: '5', label: 'AI engines tracked for GEO' },
-  { value: '4', label: 'Native CMS integrations' },
-  { value: '100%', label: 'Originality-checked before review' },
-];
+
 
 const SPOTLIGHTS = [
   {
@@ -77,20 +120,136 @@ const USE_CASES = [
   { icon: Newspaper, title: 'Content teams', desc: 'Turn a keyword list into a reviewed, on-brand editorial pipeline.' },
 ];
 
-const COMPARISON = [
-  { label: 'Time to first published article', neuro: 'Minutes', diy: 'Days to weeks' },
-  { label: 'Real keyword & SERP data', neuro: true, diy: 'Extra tools' },
-  { label: 'Plagiarism + AI-detection gates', neuro: true, diy: 'Manual' },
-  { label: 'AI-visibility (GEO) tracking', neuro: true, diy: false },
-  { label: 'One-click CMS publishing', neuro: true, diy: false },
-  { label: 'Scales to 100 sites', neuro: true, diy: 'More hires' },
-  { label: 'Cost', neuro: 'Flat subscription', diy: 'Salaries + tools' },
+const COMPARISON_CARDS = [
+  { 
+    id: 'time',
+    title: 'Time to First Published Article',
+    icon: Clock,
+    neuroseoValue: 'Minutes',
+    neuroseoSubtitle: 'Automated 18-stage pipeline',
+    neuroseoScore: 100,
+    manualValue: 'Days to weeks',
+    manualSubtitle: 'Writing, editing, formatting',
+    manualScore: 15,
+    badge: '⚡ 95% Faster'
+  },
+  { 
+    id: 'research',
+    title: 'Keyword & SERP Data',
+    icon: Search,
+    neuroseoValue: 'Included natively',
+    neuroseoSubtitle: 'Real-time DataForSEO API',
+    neuroseoScore: 100,
+    manualValue: 'Requires extra tools',
+    manualSubtitle: 'Ahrefs, Semrush, etc.',
+    manualScore: 40,
+    badge: '💰 Lower Cost'
+  },
+  { 
+    id: 'quality',
+    title: 'Quality & AI Detection',
+    icon: ShieldCheck,
+    neuroseoValue: 'Automated Gates',
+    neuroseoSubtitle: 'Plagiarism & AI screening',
+    neuroseoScore: 100,
+    manualValue: 'Manual Review',
+    manualSubtitle: 'Human editors & checkers',
+    manualScore: 25,
+    badge: '🛡 Risk Free'
+  },
+  { 
+    id: 'geo',
+    title: 'AI Visibility Tracking',
+    icon: TrendingUp,
+    neuroseoValue: 'Continuous Probing',
+    neuroseoSubtitle: 'ChatGPT, Claude, Gemini',
+    neuroseoScore: 100,
+    manualValue: 'Blind Spots',
+    manualSubtitle: 'No standardized way to track',
+    manualScore: 10,
+    badge: '📈 GEO Optimized'
+  },
+  { 
+    id: 'publishing',
+    title: 'CMS Publishing',
+    icon: Rocket,
+    neuroseoValue: 'One-click / Auto',
+    neuroseoSubtitle: 'WordPress, Webflow, Shopify',
+    neuroseoScore: 100,
+    manualValue: 'Copy & Paste',
+    manualSubtitle: 'Manual formatting & image uploads',
+    manualScore: 20,
+    badge: '🚀 Fully Automated'
+  },
+  { 
+    id: 'scale',
+    title: 'Scalability',
+    icon: Globe,
+    neuroseoValue: '100+ Sites',
+    neuroseoSubtitle: 'Run entire portfolios from one hub',
+    neuroseoScore: 100,
+    manualValue: '1-3 Sites',
+    manualSubtitle: 'Requires hiring more staff to scale',
+    manualScore: 30,
+    badge: '🌍 Unlimited Scale'
+  }
 ];
 
 const TESTIMONIALS = [
-  { quote: 'We replaced a freelance writer and two SEO tools with one workflow. The fact-check gate alone saved us from publishing nonsense.', name: 'Maya R.', role: 'Head of Growth, B2B SaaS' },
-  { quote: 'The GEO tracking is the part nobody else has. Seeing when Perplexity starts citing us changed how we brief content.', name: 'Daniel K.', role: 'Founder, DTC brand' },
-  { quote: 'Running 30 client sites used to mean 30 spreadsheets. Now it is one dashboard and a branded PDF every Monday.', name: 'Priya S.', role: 'Director, SEO agency' },
+  { 
+    quote: 'We replaced a freelance writer and two SEO tools with one workflow. The fact-check gate alone saved us from publishing nonsense.', 
+    name: 'Maya R.', 
+    role: 'Head of Growth, B2B SaaS',
+    image: 'https://randomuser.me/api/portraits/women/44.jpg'
+  },
+  { 
+    quote: 'The GEO tracking is the part nobody else has. Seeing when Perplexity starts citing us changed how we brief content.', 
+    name: 'Daniel K.', 
+    role: 'Founder, DTC brand',
+    image: 'https://randomuser.me/api/portraits/men/32.jpg'
+  },
+  { 
+    quote: 'Running 30 client sites used to mean 30 spreadsheets. Now it is one dashboard and a branded PDF every Monday.', 
+    name: 'Priya S.', 
+    role: 'Director, SEO agency',
+    image: 'https://randomuser.me/api/portraits/women/68.jpg'
+  },
+  { 
+    quote: 'I used to spend 15 hours a week just building content briefs. NeuroSEO generates them instantly based on live SERP data.', 
+    name: 'Marcus T.', 
+    role: 'Content Strategist',
+    image: 'https://randomuser.me/api/portraits/men/46.jpg'
+  },
+  { 
+    quote: 'The automated internal linking is flawless. It immediately improved our topical authority without any manual auditing.', 
+    name: 'Sarah L.', 
+    role: 'VP of Marketing',
+    image: 'https://randomuser.me/api/portraits/women/12.jpg'
+  },
+  { 
+    quote: 'We scaled from publishing 4 articles a month to 40, without sacrificing quality or hiring more writers. Unbelievable ROI.', 
+    name: 'James C.', 
+    role: 'Startup Founder',
+    image: 'https://randomuser.me/api/portraits/men/22.jpg'
+  },
+  { 
+    quote: 'Finally, an AI writer that understands brand voice. I setup our style guide once and it nails our exact tone every single time.', 
+    name: 'Elena V.', 
+    role: 'Lead Editor',
+    image: 'https://randomuser.me/api/portraits/women/33.jpg'
+  },
+  { 
+    quote: 'Our agency margins doubled since moving to NeuroSEO. We deliver higher quality content in a fraction of the time.', 
+    name: 'Tom W.', 
+    role: 'Agency Partner',
+    image: 'https://randomuser.me/api/portraits/men/67.jpg'
+  },
+  { 
+    quote: 'The built-in AI detection ensures our clients feel safe. It’s the most comprehensive content pipeline I have ever used.', 
+    name: 'Chloe B.', 
+    role: 'SEO Manager',
+    image: 'https://randomuser.me/api/portraits/women/79.jpg'
+  },
 ];
 
 const FAQ_PREVIEW = [
@@ -103,108 +262,60 @@ const FAQ_PREVIEW = [
 export default function HomePage() {
   return (
     <>
-      {/* ─── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden">
-        {/* grid overlay — brand signature, #103938 at 2% with radial fade */}
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage:
-              'linear-gradient(#10393814 1px, transparent 1px), linear-gradient(90deg, #10393814 1px, transparent 1px)',
-            backgroundSize: '40px 40px',
-            maskImage: 'radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%)',
-            WebkitMaskImage: 'radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%)',
-          }}
-        />
-        {/* ambient blobs */}
-        <div className="pointer-events-none absolute left-1/4 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-sky-50 blur-3xl drift-slow" />
-        <div className="pointer-events-none absolute right-1/4 top-10 h-72 w-72 translate-x-1/2 rounded-full bg-emerald-50 blur-3xl drift-slow" />
-
-        <Container className="relative pt-20 pb-16 text-center sm:pt-28 sm:pb-24">
-          <Reveal>
-            <Eyebrow>Autonomous AI SEO · Real ranking data</Eyebrow>
-          </Reveal>
-          <Reveal delay={60}>
-            <h1 className="mx-auto mt-6 max-w-4xl text-[clamp(2.4rem,8vw,4.5rem)] font-bold leading-[0.98] tracking-tighter text-foreground">
-              SEO content that{' '}
-              <span className="text-[#103938]">writes &amp; publishes itself</span>
-            </h1>
-          </Reveal>
-          <Reveal delay={120}>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-snug text-muted-foreground sm:text-xl">
-              NeuroSEO researches keywords, writes ranking articles, fact-checks them, scores SEO and AI visibility,
-              and publishes to your CMS — continuously, on autopilot.
-            </p>
-          </Reveal>
-          <Reveal delay={180}>
-            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button href={`${APP_URL}/signup`} external size="lg">
-                Generate your first article
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-              <Button href="/pricing" variant="outline" size="lg">
-                View pricing
-              </Button>
-            </div>
-          </Reveal>
-          <Reveal delay={240}>
-            <p className="mt-6 text-sm text-muted-foreground">
-              No credit card required · AES-256 encrypted · Cancel anytime
-            </p>
-          </Reveal>
-        </Container>
-      </section>
+      <HeroSection />
 
       {/* ─── Trust marquee ────────────────────────────────────────────────── */}
-      <section className="border-y border-border bg-muted/30 py-8">
-        <div className="relative overflow-hidden">
-          <div className="marquee-track flex w-max items-center gap-12 whitespace-nowrap">
-            {[...TRUST, ...TRUST].map((name, i) => (
-              <span key={i} className="text-sm font-semibold tracking-tight text-muted-foreground/70">
-                {name}
-              </span>
-            ))}
-          </div>
+      <section id="trust-marquee" className="relative overflow-hidden border-y border-border/60 bg-gradient-to-b from-[#FAFAFA] to-white py-16 sm:py-24">
+        <Container>
+          <h2 className="mb-12 text-center text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground sm:mb-16 sm:text-sm">
+            Trusted by modern marketing teams
+          </h2>
+        </Container>
+        <div className="w-full max-w-full overflow-hidden">
+          <Marquee3D items={TRUST} />
         </div>
       </section>
 
-      {/* ─── Stats band ───────────────────────────────────────────────────── */}
-      <section className="py-14 sm:py-16">
-        <Container>
-          <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
-            {STATS.map((s, i) => (
-              <Reveal key={s.label} delay={(i % 4) * 60}>
-                <div className="text-center">
-                  <div className="text-4xl font-bold tracking-tighter text-[#103938] sm:text-5xl">{s.value}</div>
-                  <div className="mt-2 text-sm leading-snug text-muted-foreground">{s.label}</div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
+
 
       {/* ─── Features ─────────────────────────────────────────────────────── */}
-      <section className="py-20 sm:py-28">
-        <Container>
+      <section className="relative overflow-hidden bg-[#FAFAFA] py-14 sm:py-20">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white via-[#FAFAFA] to-[#FAFAFA]" />
+        <Container className="relative">
           <SectionHeading
             eyebrow="Capabilities"
             title="An entire SEO team, automated"
-            sub="From research to published, ranking content — without the headcount."
+            sub="Everything you need to research, write, optimize, publish, and monitor SEO content from one AI-powered workspace."
           />
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map((f, i) => (
-              <Reveal key={f.title} delay={(i % 3) * 60}>
-                <div className="group h-full rounded-2xl border border-border bg-white p-7 transition-shadow duration-300 hover:shadow-lg hover:shadow-black/5">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#103938]/8 transition-colors group-hover:bg-[#103938]/12">
-                    <f.icon className="h-5 w-5 text-[#103938]" />
-                  </span>
-                  <h3 className="mt-5 text-lg font-semibold tracking-tight text-foreground">{f.title}</h3>
+              <Reveal key={f.title} delay={i * 80}>
+                <div className="group flex h-full flex-col rounded-[20px] border border-border/80 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#103938]/30 hover:shadow-md hover:shadow-black/5">
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#103938]/10 to-[#103938]/5 shadow-inner">
+                    <f.icon className="h-6 w-6 text-[#103938] transition-transform duration-300 group-hover:scale-105" />
+                  </div>
+                  <h3 className="text-xl font-bold tracking-tight text-foreground">{f.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
+                  
+                  <ul className="mt-5 mb-6 space-y-3">
+                    {f.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-2.5 text-sm font-medium text-muted-foreground">
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#103938]" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto pt-4">
+                    <span className="inline-flex items-center text-sm font-semibold text-[#103938] transition-colors hover:text-[#0d2e2d]">
+                      Learn More <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                  </div>
                 </div>
               </Reveal>
             ))}
           </div>
+
         </Container>
       </section>
 
@@ -235,7 +346,7 @@ export default function HomePage() {
                       ))}
                     </ul>
                   </div>
-                  <div className="relative overflow-hidden rounded-3xl border border-border bg-white p-8 shadow-sm">
+                  <div className="relative overflow-hidden rounded-3xl border border-border bg-white shadow-sm h-full min-h-[350px] sm:min-h-[400px] flex flex-col">
                     <div
                       className="pointer-events-none absolute inset-0 opacity-60"
                       style={{
@@ -246,10 +357,131 @@ export default function HomePage() {
                         WebkitMaskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, #000 30%, transparent 100%)',
                       }}
                     />
-                    <div className="relative flex h-48 items-center justify-center">
-                      <span className="flex h-20 w-20 items-center justify-center rounded-2xl bg-[#103938]/8">
-                        <s.icon className="h-9 w-9 text-[#103938]" />
-                      </span>
+                    <div className="relative flex flex-1 w-full h-full items-center justify-center p-6 sm:p-10">
+                      {s.eyebrow === 'Research' && (
+                        <div className="w-full max-w-[420px] scale-100 sm:scale-110 lg:scale-125 origin-center rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative z-10 font-sans">
+                          <div className="flex flex-col items-center border-b border-border/50 pb-6 mb-6">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-muted/50 mb-4">
+                              <Search className="h-6 w-6 text-foreground/70" />
+                            </div>
+                            <h4 className="text-sm font-bold text-foreground mb-1">Live SERP Data</h4>
+                            <p className="text-lg font-bold text-muted-foreground">Volume & Difficulty</p>
+                          </div>
+                          
+                          <div className="space-y-4">
+                            <div>
+                              <div className="flex justify-between text-[11px] font-bold text-foreground uppercase tracking-wider mb-2">
+                                <span>SEO Automation</span>
+                                <span className="text-muted-foreground">12k</span>
+                              </div>
+                              <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                                <div className="h-full rounded-full bg-[#103938]" style={{ width: '85%' }} />
+                              </div>
+                            </div>
+                            
+                            <div>
+                              <div className="flex justify-between text-[11px] font-bold text-foreground uppercase tracking-wider mb-2">
+                                <span>AI Writing</span>
+                                <span className="text-muted-foreground">45k</span>
+                              </div>
+                              <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                                <div className="h-full rounded-full bg-[#103938]" style={{ width: '95%' }} />
+                              </div>
+                            </div>
+                            
+                            <div>
+                              <div className="flex justify-between text-[11px] font-bold text-foreground uppercase tracking-wider mb-2">
+                                <span>Content Gap</span>
+                                <span className="text-muted-foreground">8k</span>
+                              </div>
+                              <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                                <div className="h-full rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]" style={{ width: '60%' }} />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {s.eyebrow === 'Trust' && (
+                        <div className="w-full max-w-[420px] scale-100 sm:scale-110 lg:scale-125 origin-center rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative z-10 font-sans">
+                          <div className="flex flex-col items-center border-b border-border/50 pb-6 mb-6">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 mb-4">
+                              <ShieldCheck className="h-6 w-6 text-emerald-600" />
+                            </div>
+                            <h4 className="text-sm font-bold text-foreground mb-1">Quality Score</h4>
+                            <div className="flex items-baseline gap-1">
+                              <span className="text-5xl font-black text-emerald-500 tracking-tighter">98</span>
+                              <span className="text-lg font-bold text-muted-foreground">/100</span>
+                            </div>
+                          </div>
+                          
+                          <ul className="space-y-4">
+                            <li className="flex items-center gap-3">
+                              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-50 text-emerald-500">
+                                <Check className="h-3 w-3 shrink-0" />
+                              </div>
+                              <span className="text-xs font-bold text-foreground">Plagiarism check passed</span>
+                            </li>
+                            <li className="flex items-center gap-3">
+                              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-50 text-emerald-500">
+                                <Check className="h-3 w-3 shrink-0" />
+                              </div>
+                              <span className="text-xs font-bold text-foreground">AI-detection clear</span>
+                            </li>
+                            <li className="flex items-center gap-3">
+                              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-50 text-emerald-500">
+                                <Check className="h-3 w-3 shrink-0" />
+                              </div>
+                              <span className="text-xs font-bold text-foreground">Fact-verification verified</span>
+                            </li>
+                          </ul>
+                        </div>
+                      )}
+
+                      {s.eyebrow === 'AI visibility' && (
+                        <div className="w-full max-w-[420px] scale-100 sm:scale-110 lg:scale-125 origin-center rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative z-10 font-sans">
+                          <div className="flex flex-col items-center border-b border-border/50 pb-6 mb-6">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#103938]/5 mb-4">
+                              <Bot className="h-6 w-6 text-[#103938]" />
+                            </div>
+                            <h4 className="text-sm font-bold text-foreground mb-1">Brand Mentions</h4>
+                            <div className="flex items-baseline gap-1">
+                              <span className="text-5xl font-black text-[#103938] tracking-tighter">85%</span>
+                              <span className="text-lg font-bold text-muted-foreground">visibility</span>
+                            </div>
+                          </div>
+                          
+                          <div className="space-y-4">
+                            <div>
+                              <div className="flex justify-between text-[11px] font-bold text-foreground uppercase tracking-wider mb-2">
+                                <span>ChatGPT</span>
+                                <span className="text-emerald-600">High</span>
+                              </div>
+                              <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                                <div className="h-full rounded-full bg-[#103938]" style={{ width: '92%' }} />
+                              </div>
+                            </div>
+                            <div>
+                              <div className="flex justify-between text-[11px] font-bold text-foreground uppercase tracking-wider mb-2">
+                                <span>Perplexity</span>
+                                <span className="text-emerald-500">Medium</span>
+                              </div>
+                              <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                                <div className="h-full rounded-full bg-emerald-500" style={{ width: '65%' }} />
+                              </div>
+                            </div>
+                            <div>
+                              <div className="flex justify-between text-[11px] font-bold text-foreground uppercase tracking-wider mb-2">
+                                <span>Google AI</span>
+                                <span className="text-emerald-600">High</span>
+                              </div>
+                              <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                                <div className="h-full rounded-full bg-[#103938]" style={{ width: '88%' }} />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -267,23 +499,7 @@ export default function HomePage() {
             title="Research → Publish, on autopilot"
             sub="Every article runs through the same rigorous 18-stage pipeline before it reaches you."
           />
-          <div className="mt-14 flex flex-wrap items-center justify-center gap-x-3 gap-y-4">
-            {PIPELINE.map((step, i) => (
-              <Reveal key={step} delay={i * 40}>
-                <div className="flex items-center gap-3">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-foreground shadow-sm">
-                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#103938] text-[11px] font-bold text-white">
-                      {i + 1}
-                    </span>
-                    {step}
-                  </span>
-                  {i < PIPELINE.length - 1 && (
-                    <span className="pulse-line hidden h-px w-6 bg-[#103938]/30 lg:block" />
-                  )}
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <PipelinePath steps={PIPELINE} />
         </Container>
       </section>
 
@@ -298,12 +514,13 @@ export default function HomePage() {
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {USE_CASES.map((u, i) => (
               <Reveal key={u.title} delay={(i % 4) * 60}>
-                <div className="h-full rounded-2xl border border-border bg-white p-6">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#103938]/8">
-                    <u.icon className="h-5 w-5 text-[#103938]" />
+                <div className="group flex h-full flex-col rounded-2xl border border-border bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#103938]/30 hover:shadow-xl hover:shadow-[#103938]/5 cursor-default relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#103938]/[0.03] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-xl bg-[#103938]/8 transition-colors duration-300 group-hover:bg-[#103938]/10">
+                    <u.icon className="h-5 w-5 text-[#103938] transition-transform duration-300 group-hover:scale-110" />
                   </span>
-                  <h3 className="mt-4 text-base font-semibold tracking-tight text-foreground">{u.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{u.desc}</p>
+                  <h3 className="relative z-10 mt-4 text-base font-semibold tracking-tight text-foreground transition-colors duration-300 group-hover:text-[#103938]">{u.title}</h3>
+                  <p className="relative z-10 mt-1.5 text-sm leading-relaxed text-muted-foreground">{u.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -314,39 +531,15 @@ export default function HomePage() {
       {/* ─── Comparison ───────────────────────────────────────────────────── */}
       <section className="py-20 sm:py-28">
         <Container>
-          <SectionHeading
-            eyebrow="Why NeuroSEO"
-            title="The math against doing it manually"
-            sub="What it takes to ship trustworthy content at scale — with and without NeuroSEO."
-          />
-          <Reveal>
-            <div className="mx-auto mt-12 max-w-3xl overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
-              <div className="grid grid-cols-[1.5fr_1fr_1fr] items-center border-b border-border bg-muted/40 px-5 py-3.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                <span></span>
-                <span className="text-center text-[#103938]">NeuroSEO</span>
-                <span className="text-center">Manual / DIY</span>
-              </div>
-              {COMPARISON.map((row) => (
-                <div key={row.label} className="grid grid-cols-[1.5fr_1fr_1fr] items-center border-b border-border px-5 py-3.5 text-sm last:border-0">
-                  <span className="font-medium text-foreground">{row.label}</span>
-                  <span className="flex justify-center">
-                    {row.neuro === true ? (
-                      <Check className="h-4 w-4 text-[#103938]" />
-                    ) : (
-                      <span className="text-center text-xs font-medium text-foreground">{row.neuro}</span>
-                    )}
-                  </span>
-                  <span className="flex justify-center text-center">
-                    {row.diy === false ? (
-                      <X className="h-4 w-4 text-muted-foreground/50" />
-                    ) : (
-                      <span className="text-xs text-muted-foreground">{row.diy}</span>
-                    )}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </Reveal>
+          <div className="mb-16">
+            <SectionHeading
+              eyebrow="Why NeuroSEO"
+              title="Why Teams Choose NeuroSEO"
+              sub="What it takes to ship trustworthy content at scale — with and without NeuroSEO."
+            />
+          </div>
+          
+          <WorkflowComparison />
         </Container>
       </section>
 
@@ -358,27 +551,7 @@ export default function HomePage() {
             title="Teams that stopped guessing"
             sub="From solo founders to multi-client agencies."
           />
-          <div className="mt-14 grid gap-5 lg:grid-cols-3">
-            {TESTIMONIALS.map((t, i) => (
-              <Reveal key={t.name} delay={(i % 3) * 60}>
-                <figure className="flex h-full flex-col rounded-2xl border border-border bg-white p-7">
-                  <Quote className="h-6 w-6 text-[#103938]/30" />
-                  <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-foreground">
-                    &ldquo;{t.quote}&rdquo;
-                  </blockquote>
-                  <figcaption className="mt-5 flex items-center gap-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#103938] text-sm font-semibold text-white">
-                      {t.name.charAt(0)}
-                    </span>
-                    <span>
-                      <span className="block text-sm font-semibold text-foreground">{t.name}</span>
-                      <span className="block text-xs text-muted-foreground">{t.role}</span>
-                    </span>
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
+          <TestimonialsMarquee items={TESTIMONIALS} />
         </Container>
       </section>
 
@@ -387,40 +560,30 @@ export default function HomePage() {
         <Container>
           <SectionHeading
             eyebrow="Questions"
-            title="The short answers"
-            sub={
-              <>
-                More on the{' '}
-                <Link href="/faq" className="font-medium text-[#103938] hover:underline">
-                  full FAQ
-                </Link>
-                .
-              </>
-            }
+            title="Everything you need to know"
+            sub="Questions before you get started? Here are the answers to the ones we hear most."
           />
-          <div className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2">
-            {FAQ_PREVIEW.map((f, i) => (
-              <Reveal key={f.q} delay={(i % 2) * 60}>
-                <div className="h-full rounded-2xl border border-border bg-white p-6">
-                  <h3 className="text-sm font-semibold tracking-tight text-foreground">{f.q}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <Button href="/faq" variant="outline">
-              Read the full FAQ
-            </Button>
-            <Button href="/contact" variant="ghost">
-              Talk to us
-              <ArrowRight className="h-4 w-4" />
-            </Button>
+          <FaqInteractive faqs={FAQ_PREVIEW} />
+          
+          <div className="mt-16 flex flex-col items-center justify-center gap-6 px-4">
+            <p className="text-center text-sm font-medium text-muted-foreground">
+              Still have questions? We're happy to help you before you get started.
+            </p>
+            <div className="flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+              <Button href="/contact" variant="outline" className="w-full sm:w-auto">
+                Talk to us
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+              <Button href="/pricing" variant="primary" className="w-full sm:w-auto">
+                Try NeuroSEO
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
         </Container>
       </section>
 
-      <CtaSection />
+      <InteractiveCta />
     </>
   );
 }

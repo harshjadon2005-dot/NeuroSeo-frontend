@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { ChevronDown, Menu, X, BookOpen, GraduationCap } from 'lucide-react';
 import { cn, APP_URL } from '@/lib/utils';
 import { Button } from './ui';
+import { ResourcesMegaMenu, MobileResourcesAccordion } from '@/components/resources-mega-menu';
 
 const NAV = [
   { href: '/pricing', label: 'Pricing' },
@@ -13,15 +14,9 @@ const NAV = [
   { href: '/contact', label: 'Contact' },
 ];
 
-const RESOURCES = [
-  { href: '/resources/learn', label: 'Learn', desc: 'SEO & GEO fundamentals', icon: GraduationCap },
-  { href: '/resources/guide', label: 'Guide', desc: 'Step-by-step playbooks', icon: BookOpen },
-];
-
 export function SiteHeader() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [resourcesOpen, setResourcesOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-white/80 backdrop-blur-xl">
@@ -34,47 +29,7 @@ export function SiteHeader() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-1 md:flex">
-          {/* Resources dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setResourcesOpen(true)}
-            onMouseLeave={() => setResourcesOpen(false)}
-          >
-            <button
-              className={cn(
-                'flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium transition-colors',
-                pathname.startsWith('/resources') ? 'text-[#103938]' : 'text-muted-foreground hover:text-foreground',
-              )}
-            >
-              Resources
-              <ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200', resourcesOpen && 'rotate-180')} />
-            </button>
-            <div
-              className={cn(
-                'absolute left-0 top-full w-64 origin-top pt-2 transition-all duration-200',
-                resourcesOpen ? 'pointer-events-auto opacity-100 translate-y-0' : 'pointer-events-none opacity-0 -translate-y-1',
-              )}
-              style={{ transitionTimingFunction: 'var(--ease-out)' }}
-            >
-              <div className="overflow-hidden rounded-xl border border-border bg-white p-1.5 shadow-xl shadow-black/5">
-                {RESOURCES.map((r) => (
-                  <Link
-                    key={r.href}
-                    href={r.href}
-                    className="flex items-start gap-3 rounded-lg p-3 transition-colors hover:bg-muted"
-                  >
-                    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#103938]/8">
-                      <r.icon className="h-4 w-4 text-[#103938]" />
-                    </span>
-                    <span>
-                      <span className="block text-sm font-medium text-foreground">{r.label}</span>
-                      <span className="block text-xs text-muted-foreground">{r.desc}</span>
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
+          <ResourcesMegaMenu />
 
           {NAV.map((item) => (
             <Link
@@ -91,13 +46,13 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
-          <a
-            href={`${APP_URL}/login`}
+          <Link
+            href="/login"
             className="press rounded-full px-4 py-2 text-sm font-medium text-foreground hover:text-[#103938]"
           >
             Sign in
-          </a>
-          <Button href={`${APP_URL}/signup`} external>
+          </Link>
+          <Button href="/register">
             Start free
           </Button>
         </div>
@@ -115,16 +70,7 @@ export function SiteHeader() {
       {mobileOpen && (
         <div className="border-t border-border bg-white md:hidden">
           <div className="space-y-1 px-4 py-4">
-            {RESOURCES.map((r) => (
-              <Link
-                key={r.href}
-                href={r.href}
-                onClick={() => setMobileOpen(false)}
-                className="block rounded-lg px-3 py-2.5 text-sm font-medium text-foreground hover:bg-muted"
-              >
-                {r.label}
-              </Link>
-            ))}
+            <MobileResourcesAccordion onNavigate={() => setMobileOpen(false)} />
             {NAV.map((item) => (
               <Link
                 key={item.href}
@@ -136,10 +82,10 @@ export function SiteHeader() {
               </Link>
             ))}
             <div className="flex flex-col gap-2 pt-3">
-              <Button href={`${APP_URL}/login`} variant="outline" external>
+              <Button href="/login" variant="outline">
                 Sign in
               </Button>
-              <Button href={`${APP_URL}/signup`} external>
+              <Button href="/register">
                 Start free
               </Button>
             </div>

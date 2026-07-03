@@ -12,9 +12,10 @@ type ButtonProps = {
   className?: string;
   children: React.ReactNode;
   external?: boolean;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
 };
 
-export function Button({ href, variant = 'primary', size = 'md', className, children, external }: ButtonProps) {
+export function Button({ href, variant = 'primary', size = 'md', className, children, external, onClick }: ButtonProps) {
   const base =
     'press inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#103938] focus-visible:ring-offset-2';
   const sizes = {
@@ -22,27 +23,27 @@ export function Button({ href, variant = 'primary', size = 'md', className, chil
     lg: 'h-13 px-8 text-base',
   };
   const variants = {
-    primary: 'bg-[#103938] text-white hover:bg-[#0d2e2d] shadow-lg shadow-[#103938]/20',
-    outline: 'border border-border bg-white text-foreground hover:border-[#103938]/40',
-    ghost: 'text-[#103938] hover:bg-[#103938]/5',
+    primary: 'bg-[#103938] text-white hover:bg-[#0d2e2d] shadow-lg shadow-[#103938]/20 transition-all hover:-translate-y-0.5 active:translate-y-0',
+    outline: 'border border-border bg-white text-foreground hover:border-[#103938]/40 transition-all',
+    ghost: 'text-[#103938] hover:bg-[#103938]/5 transition-colors',
   };
   const cls = cn(base, sizes[size], variants[variant], className);
 
   if (href) {
     if (external) {
       return (
-        <a href={href} className={cls} target="_blank" rel="noopener noreferrer">
+        <a href={href} className={cls} target="_blank" rel="noopener noreferrer" onClick={onClick}>
           {children}
         </a>
       );
     }
     return (
-      <Link href={href} className={cls}>
+      <Link href={href} className={cls} onClick={onClick}>
         {children}
       </Link>
     );
   }
-  return <button className={cls}>{children}</button>;
+  return <button className={cls} onClick={onClick}>{children}</button>;
 }
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
