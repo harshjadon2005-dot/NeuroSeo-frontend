@@ -188,11 +188,11 @@ export function ResourcesMegaMenu() {
                 </div>
              </div>
              <Link 
-               href="#" 
+               href="/pricing" 
                onClick={() => setIsOpen(false)}
                className="flex items-center gap-1 rounded-full bg-[#103938] px-4 py-2 text-[12px] font-bold text-white transition-all hover:bg-[#103938]/90 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
              >
-                Explore Resources <ArrowRight className="h-3.5 w-3.5" />
+                View Pricing <ArrowRight className="h-3.5 w-3.5" />
              </Link>
           </div>
         </div>
