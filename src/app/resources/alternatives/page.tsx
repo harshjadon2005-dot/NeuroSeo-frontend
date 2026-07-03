@@ -61,11 +61,7 @@ export default function AlternativesPage() {
           { name: 'Jasper Alts', count: 4, href: '#' },
           { name: 'Frase Alts', count: 3, href: '#' },
         ],
-        trending: [
-          { title: 'Top 7 Surfer SEO Alternatives', href: '#' },
-          { title: 'Why teams are leaving Jasper', href: '#' },
-          { title: 'Best AI Writers in 2026', href: '#' },
-        ]
+        trending: remainingPosts.slice(0, 3).map(p => ({ title: p.title, href: `/resources/alternatives/${p.slug}` }))
       }}
       featured={{ post: featured, visual: AlternativesMockup }}
       posts={remainingPosts}

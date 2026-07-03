@@ -55,11 +55,7 @@ export default function LearnPage() {
           { name: 'Content Strategy', count: 15, href: '#' },
           { name: 'Technical SEO', count: 9, href: '#' },
         ],
-        trending: [
-          { title: 'The 2026 Guide to AI Search Engines', href: '#' },
-          { title: 'How to map intent for ChatGPT searches', href: '#' },
-          { title: 'Advanced Core Web Vitals Optimization', href: '#' },
-        ]
+        trending: remainingPosts.slice(0, 3).map(p => ({ title: p.title, href: `/resources/learn/${p.slug}` }))
       }}
       featured={{ post: featured, visual: GeoMockup }}
       posts={remainingPosts}
