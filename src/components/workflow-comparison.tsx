@@ -54,13 +54,13 @@ export function WorkflowComparison() {
           
           {/* Header */}
           <div className="grid grid-cols-[1.2fr_1fr_1fr] border-b border-[#E8ECEA] bg-[#FAFAFA]/50">
-            <div className="px-6 py-5 md:px-8 text-[11px] font-bold uppercase tracking-wider text-muted-foreground/60">
+            <div className="px-6 py-5 md:px-8 text-xs sm:text-sm font-bold uppercase tracking-wider text-muted-foreground">
               Feature Area
             </div>
-            <div className="px-6 py-5 md:px-8 border-l border-[#E8ECEA] text-[11px] font-bold uppercase tracking-wider text-muted-foreground/80">
+            <div className="px-6 py-5 md:px-8 border-l border-[#E8ECEA] text-xs sm:text-sm font-bold uppercase tracking-wider text-muted-foreground">
               Traditional Workflow
             </div>
-            <div className="px-6 py-5 md:px-8 border-l border-[#E8ECEA] text-[11px] font-bold uppercase tracking-wider text-[#103938] bg-emerald-500/5">
+            <div className="px-6 py-5 md:px-8 border-l border-[#E8ECEA] text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#103938] bg-emerald-500/5">
               NeuroSEO
             </div>
           </div>
@@ -111,24 +111,24 @@ export function WorkflowComparison() {
           {/* Footer / Estimated Time */}
           <div className="grid grid-cols-[1.2fr_1fr_1fr] border-t border-[#E8ECEA] bg-[#FAFAFA]/50">
             <div className="p-6 md:px-8 md:py-6 flex items-center">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">Overall Comparison</span>
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-muted-foreground">Overall Comparison</span>
             </div>
 
             <div className="p-6 md:px-8 md:py-6 border-l border-[#E8ECEA] flex flex-col justify-center">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground mb-1">Estimated Time</span>
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-muted-foreground mb-1">Estimated Time</span>
               <div className="flex items-center gap-3">
                 <span className="text-xl md:text-2xl font-bold text-foreground">2–5 Days</span>
-                <span className="inline-flex items-center rounded-full bg-muted/60 px-2 py-0.5 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
+                <span className="inline-flex items-center rounded-full bg-muted/60 px-2 py-0.5 text-[10px] sm:text-xs font-bold text-muted-foreground uppercase tracking-wider">
                   Manual
                 </span>
               </div>
             </div>
 
             <div className="p-6 md:px-8 md:py-6 border-l border-[#E8ECEA] bg-emerald-500/5 flex flex-col justify-center">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-800/60 mb-1">Estimated Time</span>
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#103938] mb-1">Estimated Time</span>
               <div className="flex items-center gap-3">
                 <span className="text-xl md:text-2xl font-bold text-[#103938]">3 Min</span>
-                <span className="inline-flex items-center rounded-full bg-emerald-500 px-2 py-0.5 text-[10px] font-bold text-white uppercase tracking-wider shadow-sm">
+                <span className="inline-flex items-center rounded-full bg-emerald-500 px-2 py-0.5 text-[10px] sm:text-xs font-bold text-white uppercase tracking-wider shadow-sm">
                   Automated
                 </span>
               </div>
