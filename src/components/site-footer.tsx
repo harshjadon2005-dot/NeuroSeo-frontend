@@ -189,19 +189,19 @@ export function SiteFooter() {
               Autonomous AI SEO that researches, writes, verifies, and publishes ranking content — continuously.
             </p>
             <div className="mt-8 flex gap-4">
-              <a href="#" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+              <a href="https://linkedin.com/company/neuroseo" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                 <LinkedinIcon className="h-4 w-4" />
                 <span className="sr-only">LinkedIn</span>
               </a>
-              <a href="#" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+              <a href="https://twitter.com/neuroseo" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                 <TwitterIcon className="h-4 w-4" />
                 <span className="sr-only">X (Twitter)</span>
               </a>
-              <a href="#" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+              <a href="https://github.com/neuroseo" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                 <GithubIcon className="h-4 w-4" />
                 <span className="sr-only">GitHub</span>
               </a>
-              <a href="#" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+              <a href="https://youtube.com/@neuroseo" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                 <YoutubeIcon className="h-4 w-4" />
                 <span className="sr-only">YouTube</span>
               </a>
