@@ -405,79 +405,79 @@ export default function HomePage() {
                       )}
 
                       {s.eyebrow === 'Trust' && (
-                        <div className="w-full max-w-[420px] scale-100 sm:scale-110 lg:scale-125 origin-center rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative z-10 font-sans">
-                          <div className="flex flex-col items-center border-b border-border/50 pb-6 mb-6">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 mb-4">
-                              <ShieldCheck className="h-6 w-6 text-emerald-600" />
+                        <div className="absolute top-8 left-8 sm:top-12 sm:left-12 right-[-20px] bottom-[-20px] rounded-tl-3xl border border-border/80 bg-white p-6 sm:p-10 shadow-[[-20px_20px_50px_rgba(16,57,56,0.06)]] font-sans flex flex-col z-10">
+                          <div className="flex flex-col items-center border-b border-border/50 pb-6 mb-8 mt-4">
+                            <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-emerald-50 mb-4">
+                              <ShieldCheck className="h-8 w-8 text-emerald-600" />
                             </div>
-                            <h4 className="text-sm font-bold text-foreground mb-1">Quality Score</h4>
+                            <h4 className="text-base font-bold text-foreground mb-1">Quality Score</h4>
                             <div className="flex items-baseline gap-1">
-                              <span className="text-5xl font-black text-emerald-500 tracking-tighter">98</span>
-                              <span className="text-lg font-bold text-muted-foreground">/100</span>
+                              <span className="text-6xl font-black text-emerald-500 tracking-tighter">98</span>
+                              <span className="text-xl font-bold text-muted-foreground">/100</span>
                             </div>
                           </div>
                           
-                          <ul className="space-y-4">
-                            <li className="flex items-center gap-3">
-                              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-50 text-emerald-500">
-                                <Check className="h-3 w-3 shrink-0" />
+                          <ul className="space-y-6 flex-1 px-4 mt-2">
+                            <li className="flex items-center gap-4">
+                              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-50 text-emerald-500">
+                                <Check className="h-4 w-4 shrink-0" />
                               </div>
-                              <span className="text-xs font-bold text-foreground">Plagiarism check passed</span>
+                              <span className="text-sm font-bold text-foreground">Plagiarism check passed</span>
                             </li>
-                            <li className="flex items-center gap-3">
-                              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-50 text-emerald-500">
-                                <Check className="h-3 w-3 shrink-0" />
+                            <li className="flex items-center gap-4">
+                              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-50 text-emerald-500">
+                                <Check className="h-4 w-4 shrink-0" />
                               </div>
-                              <span className="text-xs font-bold text-foreground">AI-detection clear</span>
+                              <span className="text-sm font-bold text-foreground">AI-detection clear</span>
                             </li>
-                            <li className="flex items-center gap-3">
-                              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-50 text-emerald-500">
-                                <Check className="h-3 w-3 shrink-0" />
+                            <li className="flex items-center gap-4">
+                              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-50 text-emerald-500">
+                                <Check className="h-4 w-4 shrink-0" />
                               </div>
-                              <span className="text-xs font-bold text-foreground">Fact-verification verified</span>
+                              <span className="text-sm font-bold text-foreground">Fact-verification verified</span>
                             </li>
                           </ul>
                         </div>
                       )}
 
                       {s.eyebrow === 'AI visibility' && (
-                        <div className="w-full max-w-[420px] scale-100 sm:scale-110 lg:scale-125 origin-center rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative z-10 font-sans">
-                          <div className="flex flex-col items-center border-b border-border/50 pb-6 mb-6">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#103938]/5 mb-4">
-                              <Bot className="h-6 w-6 text-[#103938]" />
+                        <div className="absolute top-8 left-8 sm:top-12 sm:left-12 right-[-20px] bottom-[-20px] rounded-tl-3xl border border-border/80 bg-white p-6 sm:p-10 shadow-[[-20px_20px_50px_rgba(16,57,56,0.06)]] font-sans flex flex-col z-10">
+                          <div className="flex flex-col items-center border-b border-border/50 pb-6 mb-8 mt-4">
+                            <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-[#103938]/5 mb-4">
+                              <Bot className="h-8 w-8 text-[#103938]" />
                             </div>
-                            <h4 className="text-sm font-bold text-foreground mb-1">Brand Mentions</h4>
+                            <h4 className="text-base font-bold text-foreground mb-1">Brand Mentions</h4>
                             <div className="flex items-baseline gap-1">
-                              <span className="text-5xl font-black text-[#103938] tracking-tighter">85%</span>
-                              <span className="text-lg font-bold text-muted-foreground">visibility</span>
+                              <span className="text-6xl font-black text-[#103938] tracking-tighter">85%</span>
+                              <span className="text-xl font-bold text-muted-foreground">visibility</span>
                             </div>
                           </div>
                           
-                          <div className="space-y-4">
+                          <div className="space-y-8 flex-1 px-2 mt-2">
                             <div>
-                              <div className="flex justify-between text-[11px] font-bold text-foreground uppercase tracking-wider mb-2">
+                              <div className="flex justify-between text-xs font-bold text-foreground uppercase tracking-wider mb-3">
                                 <span>ChatGPT</span>
                                 <span className="text-emerald-600">High</span>
                               </div>
-                              <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                              <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
                                 <div className="h-full rounded-full bg-[#103938]" style={{ width: '92%' }} />
                               </div>
                             </div>
                             <div>
-                              <div className="flex justify-between text-[11px] font-bold text-foreground uppercase tracking-wider mb-2">
+                              <div className="flex justify-between text-xs font-bold text-foreground uppercase tracking-wider mb-3">
                                 <span>Perplexity</span>
                                 <span className="text-emerald-500">Medium</span>
                               </div>
-                              <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
-                                <div className="h-full rounded-full bg-emerald-500" style={{ width: '65%' }} />
+                              <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
+                                <div className="h-full rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]" style={{ width: '65%' }} />
                               </div>
                             </div>
                             <div>
-                              <div className="flex justify-between text-[11px] font-bold text-foreground uppercase tracking-wider mb-2">
+                              <div className="flex justify-between text-xs font-bold text-foreground uppercase tracking-wider mb-3">
                                 <span>Google AI</span>
                                 <span className="text-emerald-600">High</span>
                               </div>
-                              <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                              <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
                                 <div className="h-full rounded-full bg-[#103938]" style={{ width: '88%' }} />
                               </div>
                             </div>
