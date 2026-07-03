@@ -181,18 +181,18 @@ export function ResourcesMegaMenu() {
           {/* Bottom Highlight Bar */}
           <div className="bg-[#EAF8F3]/60 border-t border-emerald-500/10 px-6 py-4 flex items-center justify-between">
              <div className="flex items-center gap-3">
-                <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[9px] font-bold text-emerald-700 border border-emerald-500/20">NEW</span>
+                <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[9px] font-bold text-emerald-700 border border-emerald-500/20">PRO</span>
                 <div>
-                  <h4 className="text-[12px] font-bold text-[#103938]">Programmatic SEO Hub</h4>
-                  <p className="text-[10px] font-medium text-[#103938]/70">Discover the newest GEO guides, AI writing tutorials and comparison articles.</p>
+                  <h4 className="text-[12px] font-bold text-[#103938]">Ready to scale?</h4>
+                  <p className="text-[10px] font-medium text-[#103938]/70">Upgrade your plan to unlock unlimited AI publishing and enterprise features.</p>
                 </div>
              </div>
              <Link 
-               href="#" 
+               href="/pricing" 
                onClick={() => setIsOpen(false)}
                className="flex items-center gap-1 rounded-full bg-[#103938] px-4 py-2 text-[12px] font-bold text-white transition-all hover:bg-[#103938]/90 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
              >
-                Explore Resources <ArrowRight className="h-3.5 w-3.5" />
+                View Pricing <ArrowRight className="h-3.5 w-3.5" />
              </Link>
           </div>
         </div>
@@ -263,11 +263,11 @@ export function MobileResourcesAccordion({ onNavigate }: { onNavigate: () => voi
         <h4 className="text-[13px] font-bold text-[#103938]">Programmatic SEO Hub</h4>
         <p className="text-[11px] font-medium text-[#103938]/70 mt-1 mb-3">Discover the newest GEO guides, AI writing tutorials and comparison articles.</p>
         <Link 
-          href="#" 
+          href="/pricing" 
           onClick={onNavigate}
-          className="text-[11px] font-bold text-emerald-700 flex items-center gap-1 focus-visible:outline-none"
+          className="inline-flex items-center gap-1 rounded-full bg-[#103938] px-3 py-1.5 text-[11px] font-bold text-white transition-all hover:bg-[#103938]/90 focus-visible:outline-none"
         >
-          Explore <ArrowRight className="h-3 w-3" />
+          View Pricing <ArrowRight className="h-3 w-3" />
         </Link>
       </div>
     </div>

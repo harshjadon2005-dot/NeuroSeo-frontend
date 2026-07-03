@@ -65,11 +65,7 @@ export default function DocumentationPage() {
           { name: 'Node.js SDK', count: 8, href: '#' },
           { name: 'Authentication', count: 3, href: '#' },
         ],
-        trending: [
-          { title: 'Connecting to a Headless CMS', href: '#' },
-          { title: 'Triggering generation via Webhook', href: '#' },
-          { title: 'Handling rate limits', href: '#' },
-        ]
+        trending: remainingPosts.slice(0, 3).map(p => ({ title: p.title, href: `/resources/documentation/${p.slug}` }))
       }}
       featured={{ post: featured as any, visual: DocsMockup }}
       posts={remainingPosts}

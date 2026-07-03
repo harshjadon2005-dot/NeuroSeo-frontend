@@ -67,11 +67,7 @@ export default function ComparePage() {
           { name: 'AI Writers', count: 6, href: '#' },
           { name: 'Content Optimizers', count: 4, href: '#' },
         ],
-        trending: [
-          { title: 'NeuroSEO vs Surfer SEO', href: '#' },
-          { title: 'NeuroSEO vs Jasper', href: '#' },
-          { title: 'NeuroSEO vs Clearscope', href: '#' },
-        ]
+        trending: remainingPosts.slice(0, 3).map(p => ({ title: p.title, href: `/resources/compare/${p.slug}` }))
       }}
       featured={{ post: featured, visual: CompareMockup }}
       posts={remainingPosts}

@@ -16,7 +16,7 @@ function IntegrationsMockup() {
   ];
 
   return (
-    <div className="flex h-full flex-col p-8">
+    <div className="flex h-full flex-col p-5 sm:p-8">
       <div className="mb-6 flex items-center justify-between">
         <h4 className="text-sm font-semibold tracking-tight text-foreground">Integrations</h4>
         <span className="flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-1 text-[10px] font-medium text-emerald-600">
@@ -50,7 +50,7 @@ function QualityMockup() {
   ];
 
   return (
-    <div className="flex h-full flex-col p-8">
+    <div className="flex h-full flex-col p-5 sm:p-8">
       <h4 className="mb-6 text-sm font-semibold tracking-tight text-foreground">Article Quality Dashboard</h4>
       
       <div className="mb-6 grid grid-cols-2 gap-3">
@@ -95,7 +95,7 @@ function PublishingMockup() {
   ];
 
   return (
-    <div className="flex h-full flex-col p-8">
+    <div className="flex h-full flex-col p-5 sm:p-8">
       <h4 className="mb-8 text-sm font-semibold tracking-tight text-foreground">Publishing Integrations</h4>
       
       <div className="flex items-center justify-between mb-10 px-2">
@@ -137,7 +137,7 @@ function ReviewQueueMockup() {
   ];
 
   return (
-    <div className="flex h-full flex-col p-8">
+    <div className="flex h-full flex-col p-5 sm:p-8">
       <h4 className="mb-6 text-sm font-semibold tracking-tight text-foreground">Review Queue</h4>
       <div className="flex flex-col gap-2.5">
         {queue.map((item, i) => (
@@ -157,14 +157,14 @@ function ReviewQueueMockup() {
 // --- MAIN COMPONENT ---
 
 export function FaqInteractive({ faqs }: { faqs: { q: string; a: string }[] }) {
-  const [openIndex, setOpenIndex] = useState<number>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  const getMockup = (index: number) => {
+  const getMockup = (index: number | null) => {
     switch (index) {
       case 0: return <IntegrationsMockup />;
       case 1: return <QualityMockup />;
@@ -192,7 +192,7 @@ export function FaqInteractive({ faqs }: { faqs: { q: string; a: string }[] }) {
                   }`}
                 >
                   <button
-                    onClick={() => setOpenIndex(i)}
+                    onClick={() => setOpenIndex(isOpen ? null : i)}
                     className="flex w-full items-center justify-between p-5 sm:p-6 text-left"
                   >
                     <span className={`text-sm sm:text-base font-semibold tracking-tight transition-colors ${
@@ -217,6 +217,15 @@ export function FaqInteractive({ faqs }: { faqs: { q: string; a: string }[] }) {
                       <p className="px-5 pb-5 pt-0 sm:px-6 sm:pb-6 text-sm leading-relaxed text-muted-foreground">
                         {faq.a}
                       </p>
+                      
+                      {/* Mobile mockup preview (inline) */}
+                      <div className="block lg:hidden relative w-full border-t border-border/40 bg-[#FAFAFA]/80">
+                         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:16px_16px] sm:bg-[size:24px_24px]"></div>
+                         <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#103938]/10 blur-[40px]"></div>
+                         <div className="relative z-10 w-full overflow-hidden">
+                           {getMockup(i)}
+                         </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -226,12 +235,12 @@ export function FaqInteractive({ faqs }: { faqs: { q: string; a: string }[] }) {
         </div>
 
         {/* Right Column: Product Preview */}
-        <div className="relative h-[400px] sm:h-[450px] lg:h-auto w-full overflow-hidden rounded-[24px] border border-border/50 bg-[#FAFAFA] shadow-sm">
+        <div className="hidden lg:block relative h-auto w-full overflow-hidden rounded-[24px] border border-border/50 bg-[#FAFAFA] shadow-sm">
           {/* Subtle background textures */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
           <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#103938]/10 blur-[80px]"></div>
           
-          <div className="relative h-full w-full">
+          <div className="relative h-full w-full min-h-[400px]">
             {isClient && faqs.map((_, i) => (
               <div
                 key={i}

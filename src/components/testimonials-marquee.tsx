@@ -43,31 +43,45 @@ export function TestimonialsMarquee({ items }: { items: Testimonial[] }) {
   );
 
   return (
-    <div className="relative mt-14 flex h-[650px] w-full max-w-6xl mx-auto overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full h-full">
-        
-        {/* Left Column (Down) */}
-        <div className="flex-1 overflow-hidden h-full">
-          <div className="pointer-events-none flex flex-col gap-4 animate-marquee-vertical-reverse pause-on-hover motion-reduce:[animation-play-state:paused] w-full">
-            {col1.map((t, i) => <TestimonialCard key={i} t={t} i={i} />)}
-          </div>
+    <>
+      {/* Mobile Horizontal Marquee (< 768px) */}
+      <div className="relative mt-8 flex w-full overflow-hidden md:hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-4 -mx-4 px-4 w-[calc(100%+32px)]">
+        <div className="flex w-max animate-marquee-horizontal pause-on-hover gap-4">
+          {[...items, ...items].map((t, i) => (
+            <div key={`mobile-${i}`} className="w-[300px] sm:w-[380px] shrink-0">
+              <TestimonialCard t={t} i={i} />
+            </div>
+          ))}
         </div>
-
-        {/* Middle Column (Up) */}
-        <div className="hidden md:block flex-1 overflow-hidden h-full">
-          <div className="pointer-events-none flex flex-col gap-4 animate-marquee-vertical pause-on-hover motion-reduce:[animation-play-state:paused] w-full">
-            {col2.map((t, i) => <TestimonialCard key={i} t={t} i={i} />)}
-          </div>
-        </div>
-
-        {/* Right Column (Down) */}
-        <div className="hidden lg:block flex-1 overflow-hidden h-full">
-          <div className="pointer-events-none flex flex-col gap-4 animate-marquee-vertical-reverse pause-on-hover motion-reduce:[animation-play-state:paused] w-full">
-            {col3.map((t, i) => <TestimonialCard key={i} t={t} i={i} />)}
-          </div>
-        </div>
-
       </div>
-    </div>
+
+      {/* Desktop Vertical Marquee (>= 768px) */}
+      <div className="hidden md:flex relative mt-14 h-[650px] w-full max-w-6xl mx-auto overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full h-full">
+          
+          {/* Left Column (Down) */}
+          <div className="flex-1 overflow-hidden h-full">
+            <div className="pointer-events-none flex flex-col gap-4 animate-marquee-vertical-reverse pause-on-hover motion-reduce:[animation-play-state:paused] w-full">
+              {col1.map((t, i) => <TestimonialCard key={`col1-${i}`} t={t} i={i} />)}
+            </div>
+          </div>
+
+          {/* Middle Column (Up) */}
+          <div className="flex-1 overflow-hidden h-full">
+            <div className="pointer-events-none flex flex-col gap-4 animate-marquee-vertical pause-on-hover motion-reduce:[animation-play-state:paused] w-full">
+              {col2.map((t, i) => <TestimonialCard key={`col2-${i}`} t={t} i={i} />)}
+            </div>
+          </div>
+
+          {/* Right Column (Down) */}
+          <div className="hidden lg:block flex-1 overflow-hidden h-full">
+            <div className="pointer-events-none flex flex-col gap-4 animate-marquee-vertical-reverse pause-on-hover motion-reduce:[animation-play-state:paused] w-full">
+              {col3.map((t, i) => <TestimonialCard key={`col3-${i}`} t={t} i={i} />)}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </>
   );
 }

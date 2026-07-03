@@ -221,7 +221,7 @@ export function InteractiveCta() {
                         Create your free account to unlock the full result
                       </h4>
                       <button
-                        onClick={() => window.location.href = `${APP_URL}/signup`}
+                        onClick={() => window.location.href = `/register`}
                         className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#103938] px-8 font-semibold text-white shadow-lg shadow-[#103938]/20 transition-all hover:-translate-y-0.5 hover:bg-[#0d2e2d] active:translate-y-0 sm:w-auto"
                       >
                         Start Free

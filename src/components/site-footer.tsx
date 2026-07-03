@@ -179,55 +179,57 @@ export function SiteFooter() {
         <div className="mt-12 sm:mt-16 mb-10 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
 
         {/* ─── FOOTER NAVIGATION ─────────────────────────────────────────── */}
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-8">
-          <div className="max-w-xs">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 lg:justify-between">
+          <div className="w-full lg:max-w-xs shrink-0">
             <Link href="/" className="inline-flex items-center gap-2 transition-opacity hover:opacity-80">
               <img src="/logo.png" alt="NeuroSEO" className="h-9 w-9 rounded-lg border border-white/20 bg-white p-1" />
               <span className="text-xl font-bold tracking-tight text-white">NeuroSEO</span>
             </Link>
-            <p className="mt-5 text-sm leading-relaxed text-white/60">
+            <p className="mt-5 text-sm leading-relaxed text-white/60 max-w-sm">
               Autonomous AI SEO that researches, writes, verifies, and publishes ranking content — continuously.
             </p>
             <div className="mt-8 flex gap-4">
-              <a href="#" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+              <a href="https://linkedin.com/company/neuroseo" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                 <LinkedinIcon className="h-4 w-4" />
                 <span className="sr-only">LinkedIn</span>
               </a>
-              <a href="#" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+              <a href="https://twitter.com/neuroseo" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                 <TwitterIcon className="h-4 w-4" />
                 <span className="sr-only">X (Twitter)</span>
               </a>
-              <a href="#" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+              <a href="https://github.com/neuroseo" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                 <GithubIcon className="h-4 w-4" />
                 <span className="sr-only">GitHub</span>
               </a>
-              <a href="#" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+              <a href="https://youtube.com/@neuroseo" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                 <YoutubeIcon className="h-4 w-4" />
                 <span className="sr-only">YouTube</span>
               </a>
             </div>
           </div>
 
-          {COLUMNS.map((col) => (
-            <div key={col.title}>
-              <h3 className="text-sm font-semibold tracking-wide text-white">{col.title}</h3>
-              <ul className="mt-6 space-y-3.5">
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="group inline-flex items-center text-sm text-white/60 transition-all hover:text-emerald-400 hover:translate-x-1"
-                    >
-                      <span className="relative">
-                        {link.label}
-                        <span className="absolute -bottom-1 left-0 h-[1px] w-0 bg-emerald-400 transition-all duration-300 group-hover:w-full"></span>
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-12 lg:w-[60%]">
+            {COLUMNS.map((col) => (
+              <div key={col.title}>
+                <h3 className="text-sm font-semibold tracking-wide text-white">{col.title}</h3>
+                <ul className="mt-5 sm:mt-6 space-y-3.5">
+                  {col.links.map((link) => (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        className="group inline-flex items-center text-sm text-white/60 transition-all hover:text-emerald-400 hover:translate-x-1"
+                      >
+                        <span className="relative">
+                          {link.label}
+                          <span className="absolute -bottom-1 left-0 h-[1px] w-0 bg-emerald-400 transition-all duration-300 group-hover:w-full"></span>
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* ─── BOTTOM BAR ────────────────────────────────────────────────── */}
