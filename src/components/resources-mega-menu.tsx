@@ -91,15 +91,17 @@ const MEGA_MENU_DATA = [
 export function ResourcesMegaMenu() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseEnter = () => {
-    clearTimeout(timeoutRef.current);
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setIsOpen(true);
   };
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => setIsOpen(false), 150);
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 150);
   };
 
   // Accessibility: Close on Escape key

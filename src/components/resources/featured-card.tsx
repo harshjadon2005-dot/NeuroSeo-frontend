@@ -18,7 +18,7 @@ export function FeaturedCard({ post, visual }: FeaturedCardProps) {
       <div className="flex flex-1 flex-col justify-center p-8 md:p-12 lg:p-16">
         <div className="mb-6 flex flex-wrap items-center gap-3">
           <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-700">
-            {post.tag}
+            {post.tags?.[0]}
           </span>
           {post.readTime && (
             <span className="text-xs font-semibold text-muted-foreground">
