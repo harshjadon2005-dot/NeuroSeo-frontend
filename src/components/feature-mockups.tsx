@@ -306,15 +306,25 @@ export function ReportingMockup() {
           <span className="text-[10px] font-medium text-muted-foreground border border-border/80 rounded px-2 py-1">Last 30 Days</span>
         </div>
         
-        <div className="flex items-end justify-between h-24 gap-3 mt-4">
-          {[40, 60, 45, 80, 65, 90, 75, 100].map((h, i) => (
-            <div key={i} className="w-full bg-emerald-500/10 rounded-t-md relative group h-full flex items-end">
-              <div 
-                className="w-full bg-[#103938] rounded-t-md transition-all group-hover:bg-emerald-500" 
-                style={{ height: `${h}%` }} 
-              />
-            </div>
-          ))}
+        <div className="relative mt-8 h-32 w-full">
+          {/* Horizontal Grid Lines */}
+          <div className="absolute inset-0 flex flex-col justify-between pointer-events-none pb-[1px]">
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="w-full h-px bg-border/50" />
+            ))}
+          </div>
+          
+          {/* Bars */}
+          <div className="absolute inset-0 flex items-end justify-between gap-2 sm:gap-3 px-1 pt-4">
+            {[40, 60, 45, 80, 65, 90, 75, 100].map((h, i) => (
+              <div key={i} className="w-full h-full relative group flex items-end justify-center">
+                <div 
+                  className="w-full max-w-[24px] sm:max-w-[32px] bg-[#103938] rounded-t-md transition-all group-hover:bg-emerald-500 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]" 
+                  style={{ height: `${h}%` }} 
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
