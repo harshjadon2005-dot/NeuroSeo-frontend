@@ -157,14 +157,14 @@ function ReviewQueueMockup() {
 // --- MAIN COMPONENT ---
 
 export function FaqInteractive({ faqs }: { faqs: { q: string; a: string }[] }) {
-  const [openIndex, setOpenIndex] = useState<number>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  const getMockup = (index: number) => {
+  const getMockup = (index: number | null) => {
     switch (index) {
       case 0: return <IntegrationsMockup />;
       case 1: return <QualityMockup />;
@@ -192,7 +192,7 @@ export function FaqInteractive({ faqs }: { faqs: { q: string; a: string }[] }) {
                   }`}
                 >
                   <button
-                    onClick={() => setOpenIndex(i)}
+                    onClick={() => setOpenIndex(isOpen ? null : i)}
                     className="flex w-full items-center justify-between p-5 sm:p-6 text-left"
                   >
                     <span className={`text-sm sm:text-base font-semibold tracking-tight transition-colors ${
