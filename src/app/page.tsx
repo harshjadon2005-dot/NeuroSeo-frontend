@@ -357,47 +357,47 @@ export default function HomePage() {
                         WebkitMaskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, #000 30%, transparent 100%)',
                       }}
                     />
-                    <div className="relative flex flex-1 w-full h-full items-center justify-center p-4 sm:p-8 overflow-hidden">
+                    <div className="relative flex flex-1 w-full h-full items-center justify-center p-6 sm:p-10">
                       {s.eyebrow === 'Research' && (
-                        <div className="w-full max-w-[360px] sm:max-w-[400px] rounded-2xl border border-border/50 bg-white p-5 sm:p-7 shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative z-10 font-sans mx-auto">
-                          <div className="flex items-center gap-4 border-b border-border/50 pb-5 mb-5">
-                            <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-muted/50">
-                              <Search className="h-5 w-5 sm:h-6 sm:w-6 text-foreground/70" />
+                        <div className="absolute top-8 left-8 sm:top-12 sm:left-12 right-[-20px] bottom-[-20px] rounded-tl-3xl border border-border/80 bg-white p-6 sm:p-10 shadow-[[-20px_20px_50px_rgba(16,57,56,0.06)]] font-sans flex flex-col z-10">
+                          <div className="flex items-center gap-4 border-b border-border/50 pb-6 mb-8">
+                            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-muted/50">
+                              <Search className="h-6 w-6 text-foreground/70" />
                             </div>
                             <div>
-                              <h4 className="text-sm sm:text-base font-bold text-foreground">Live SERP Data</h4>
-                              <p className="text-[11px] sm:text-xs font-medium text-muted-foreground mt-0.5">Volume & Difficulty</p>
+                              <h4 className="text-lg font-bold text-foreground">Live SERP Data</h4>
+                              <p className="text-sm font-medium text-muted-foreground mt-0.5">Volume & Difficulty</p>
                             </div>
                           </div>
                           
-                          <div className="space-y-4">
+                          <div className="space-y-8 flex-1">
                             <div>
-                              <div className="flex justify-between text-[11px] sm:text-xs font-bold text-foreground mb-1.5">
+                              <div className="flex justify-between text-sm font-bold text-foreground mb-3">
                                 <span>seo automation</span>
                                 <span className="text-muted-foreground">12k</span>
                               </div>
-                              <div className="h-1.5 sm:h-2 w-full overflow-hidden rounded-full bg-muted">
+                              <div className="h-2.5 w-full overflow-hidden rounded-full bg-muted">
                                 <div className="h-full rounded-full bg-[#103938]" style={{ width: '85%' }} />
                               </div>
                             </div>
                             
                             <div>
-                              <div className="flex justify-between text-[11px] sm:text-xs font-bold text-foreground mb-1.5">
+                              <div className="flex justify-between text-sm font-bold text-foreground mb-3">
                                 <span>ai writing</span>
                                 <span className="text-muted-foreground">45k</span>
                               </div>
-                              <div className="h-1.5 sm:h-2 w-full overflow-hidden rounded-full bg-muted">
+                              <div className="h-2.5 w-full overflow-hidden rounded-full bg-muted">
                                 <div className="h-full rounded-full bg-[#103938]" style={{ width: '95%' }} />
                               </div>
                             </div>
                             
                             <div>
-                              <div className="flex justify-between text-[11px] sm:text-xs font-bold text-foreground mb-1.5">
+                              <div className="flex justify-between text-sm font-bold text-foreground mb-3">
                                 <span>content gap</span>
                                 <span className="text-muted-foreground">8k</span>
                               </div>
-                              <div className="h-1.5 sm:h-2 w-full overflow-hidden rounded-full bg-muted">
-                                <div className="h-full rounded-full bg-emerald-500" style={{ width: '60%' }} />
+                              <div className="h-2.5 w-full overflow-hidden rounded-full bg-muted">
+                                <div className="h-full rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]" style={{ width: '60%' }} />
                               </div>
                             </div>
                           </div>
@@ -405,9 +405,9 @@ export default function HomePage() {
                       )}
 
                       {s.eyebrow === 'Trust' && (
-                        <div className="w-full max-w-[360px] sm:max-w-[400px] rounded-2xl border border-border/50 bg-white p-5 sm:p-7 shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative z-10 font-sans mx-auto">
-                          <div className="flex flex-col items-center border-b border-border/50 pb-5 mb-5">
-                            <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-emerald-50 mb-3 sm:mb-4">
+                        <div className="w-full max-w-[420px] scale-100 sm:scale-110 lg:scale-125 origin-center rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative z-10 font-sans">
+                          <div className="flex flex-col items-center border-b border-border/50 pb-6 mb-6">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 mb-4">
                               <ShieldCheck className="h-6 w-6 text-emerald-600" />
                             </div>
                             <h4 className="text-sm font-bold text-foreground mb-1">Quality Score</h4>
