@@ -346,7 +346,7 @@ export default function HomePage() {
                       ))}
                     </ul>
                   </div>
-                  <div className="relative overflow-hidden rounded-3xl border border-border bg-white shadow-sm lg:h-full lg:min-h-[400px] flex flex-col">
+                  <div className="relative overflow-hidden rounded-3xl border border-border bg-white shadow-sm h-full min-h-[350px] sm:min-h-[400px] flex flex-col">
                     <div
                       className="pointer-events-none absolute inset-0 opacity-60"
                       style={{
