@@ -263,11 +263,11 @@ export function MobileResourcesAccordion({ onNavigate }: { onNavigate: () => voi
         <h4 className="text-[13px] font-bold text-[#103938]">Programmatic SEO Hub</h4>
         <p className="text-[11px] font-medium text-[#103938]/70 mt-1 mb-3">Discover the newest GEO guides, AI writing tutorials and comparison articles.</p>
         <Link 
-          href="#" 
+          href="/pricing" 
           onClick={onNavigate}
-          className="text-[11px] font-bold text-emerald-700 flex items-center gap-1 focus-visible:outline-none"
+          className="inline-flex items-center gap-1 rounded-full bg-[#103938] px-3 py-1.5 text-[11px] font-bold text-white transition-all hover:bg-[#103938]/90 focus-visible:outline-none"
         >
-          Explore <ArrowRight className="h-3 w-3" />
+          View Pricing <ArrowRight className="h-3 w-3" />
         </Link>
       </div>
     </div>
