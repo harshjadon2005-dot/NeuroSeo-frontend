@@ -81,14 +81,10 @@ export function RoadmapClient() {
       </Container>
 
       {/* Shared Modal Overlay */}
-      <AnimatePresence>
-        {selectedItem && (
-          <RoadmapModal 
-            item={selectedItem} 
-            onClose={() => setSelectedItem(null)} 
-          />
-        )}
-      </AnimatePresence>
+      <RoadmapModal 
+        item={selectedItem} 
+        onClose={() => setSelectedItem(null)} 
+      />
     </section>
   );
 }
