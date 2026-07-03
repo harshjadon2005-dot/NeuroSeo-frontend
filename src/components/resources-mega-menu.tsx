@@ -181,10 +181,10 @@ export function ResourcesMegaMenu() {
           {/* Bottom Highlight Bar */}
           <div className="bg-[#EAF8F3]/60 border-t border-emerald-500/10 px-6 py-4 flex items-center justify-between">
              <div className="flex items-center gap-3">
-                <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[9px] font-bold text-emerald-700 border border-emerald-500/20">NEW</span>
+                <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[9px] font-bold text-emerald-700 border border-emerald-500/20">PRO</span>
                 <div>
-                  <h4 className="text-[12px] font-bold text-[#103938]">Programmatic SEO Hub</h4>
-                  <p className="text-[10px] font-medium text-[#103938]/70">Discover the newest GEO guides, AI writing tutorials and comparison articles.</p>
+                  <h4 className="text-[12px] font-bold text-[#103938]">Ready to scale?</h4>
+                  <p className="text-[10px] font-medium text-[#103938]/70">Upgrade your plan to unlock unlimited AI publishing and enterprise features.</p>
                 </div>
              </div>
              <Link 
