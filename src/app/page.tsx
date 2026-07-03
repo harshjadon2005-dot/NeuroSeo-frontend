@@ -359,7 +359,7 @@ export default function HomePage() {
                     />
                     <div className="relative flex flex-1 w-full h-full items-center justify-center p-6 sm:p-10">
                       {s.eyebrow === 'Research' && (
-                        <div className="w-full max-w-sm rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative z-10 font-sans">
+                        <div className="w-full max-w-[420px] scale-100 sm:scale-110 lg:scale-125 origin-center rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative z-10 font-sans">
                           <div className="flex items-center gap-4 border-b border-border/50 pb-6 mb-6">
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-muted/50">
                               <Search className="h-6 w-6 text-foreground/70" />
@@ -405,7 +405,7 @@ export default function HomePage() {
                       )}
 
                       {s.eyebrow === 'Trust' && (
-                        <div className="w-full max-w-sm rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative z-10 font-sans">
+                        <div className="w-full max-w-[420px] scale-100 sm:scale-110 lg:scale-125 origin-center rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative z-10 font-sans">
                           <div className="flex flex-col items-center border-b border-border/50 pb-6 mb-6">
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 mb-4">
                               <ShieldCheck className="h-6 w-6 text-emerald-600" />
@@ -441,7 +441,7 @@ export default function HomePage() {
                       )}
 
                       {s.eyebrow === 'AI visibility' && (
-                        <div className="w-full max-w-sm rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative z-10 font-sans">
+                        <div className="w-full max-w-[420px] scale-100 sm:scale-110 lg:scale-125 origin-center rounded-2xl border border-border/50 bg-white p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative z-10 font-sans">
                           <div className="flex flex-col items-center border-b border-border/50 pb-6 mb-6">
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#103938]/5 mb-4">
                               <Bot className="h-6 w-6 text-[#103938]" />
