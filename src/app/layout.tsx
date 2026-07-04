@@ -7,14 +7,14 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'sw
 
 export const metadata: Metadata = {
   title: {
-    default: 'NeuroSEO — Autonomous AI SEO that researches, writes & publishes',
-    template: '%s · NeuroSEO',
+    default: 'Seobox — Autonomous AI SEO that researches, writes & publishes',
+    template: '%s · Seobox',
   },
   description:
-    'NeuroSEO is the autonomous AI-SEO platform that researches keywords, writes ranking content, verifies it, and publishes to your CMS — continuously.',
-  metadataBase: new URL('https://neuroseo.ai'),
+    'Seobox is the autonomous AI-SEO platform that researches keywords, writes ranking content, verifies it, and publishes to your CMS — continuously.',
+  metadataBase: new URL('https://seobox.ai'),
   openGraph: {
-    title: 'NeuroSEO — Autonomous AI SEO',
+    title: 'Seobox — Autonomous AI SEO',
     description: 'Research, write, verify, and publish ranking content on autopilot.',
     type: 'website',
   },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} antialiased`}>
-      <body>
+      <body className="overflow-x-hidden">
         <LayoutElements>{children}</LayoutElements>
       </body>
     </html>

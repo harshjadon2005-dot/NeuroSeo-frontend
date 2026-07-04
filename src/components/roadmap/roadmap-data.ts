@@ -112,7 +112,7 @@ export const TIMELINE: RoadmapQuarter[] = [
       {
         id: 'NEU-115',
         title: 'Advanced Webhooks',
-        desc: 'Connect NeuroSEO publishing events to thousands of external applications.',
+        desc: 'Connect Seobox publishing events to thousands of external applications.',
         tag: 'Automation',
         status: 'building',
         estimatedRelease: 'Expected Feb 2026',
@@ -141,7 +141,7 @@ export const TIMELINE: RoadmapQuarter[] = [
           problem: 'Large organizations cannot allow AI to publish autonomously without human-in-the-loop compliance and editorial review.',
           solution: 'Customizable approval chains where Editors review drafted content before it proceeds to the Publisher role.',
           technical: 'State machine architecture managing document lifecycles tied to a rigid RBAC (Role-Based Access Control) policy engine.',
-          impact: 'Unlocks NeuroSEO for Fortune 500 companies with strict editorial guidelines.',
+          impact: 'Unlocks Seobox for Fortune 500 companies with strict editorial guidelines.',
         }
       },
     ]
@@ -159,7 +159,7 @@ export const TIMELINE: RoadmapQuarter[] = [
         priority: 'High',
         details: {
           problem: 'Exporting content to Webflow currently requires intermediary tools like Zapier or Make, which break complex rich text formatting.',
-          solution: 'A native integration that maps NeuroSEO document blocks directly to Webflow CMS item fields.',
+          solution: 'A native integration that maps Seobox document blocks directly to Webflow CMS item fields.',
           technical: 'Utilizes the new Webflow v2 Data API for precise rich text node translation.',
           impact: 'Seamless publishing for modern SaaS startups built on Webflow.',
           dependencies: ['Rich Text AST Converter']

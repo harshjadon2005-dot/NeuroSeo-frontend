@@ -3,7 +3,6 @@
 import { usePathname } from 'next/navigation';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
-import { WhatsAppButton } from '@/components/whatsapp-button';
 
 export function LayoutElements({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -18,7 +17,6 @@ export function LayoutElements({ children }: { children: React.ReactNode }) {
       <SiteHeader />
       <main>{children}</main>
       <SiteFooter />
-      <WhatsAppButton />
     </>
   );
 }

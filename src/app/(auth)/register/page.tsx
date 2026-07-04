@@ -3,8 +3,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Register — NeuroSEO Platform',
-  description: 'Register for a new NeuroSEO account with full details.',
+  title: 'Register — Seobox Platform',
+  description: 'Register for a new Seobox account with full details.',
 };
 
 export default function RegisterPage() {

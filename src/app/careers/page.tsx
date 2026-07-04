@@ -6,7 +6,7 @@ import { ResourceCta } from '@/components/resource-cta';
 import { Briefcase, MapPin, ArrowRight, Heart, Zap, Coffee, Laptop } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Careers — NeuroSEO Platform',
+  title: 'Careers — Seobox Platform',
   description: 'Join the team building the future of search and generative AI.',
 };
 

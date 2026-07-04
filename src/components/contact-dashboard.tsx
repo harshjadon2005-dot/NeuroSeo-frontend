@@ -27,8 +27,8 @@ export function ContactDashboard() {
                 </div>
                 <div>
                   <h3 className="text-sm font-bold text-foreground">Support & General</h3>
-                  <a href="mailto:support@neuroseo.com" className="mt-1 block text-sm font-medium text-muted-foreground hover:text-[#103938] transition-colors">
-                    support@neuroseo.com
+                  <a href="mailto:support@seobox.com" className="mt-1 block text-sm font-medium text-muted-foreground hover:text-[#103938] transition-colors">
+                    support@seobox.com
                   </a>
                 </div>
               </div>
@@ -40,8 +40,8 @@ export function ContactDashboard() {
                 </div>
                 <div>
                   <h3 className="text-sm font-bold text-foreground">Sales & Partnerships</h3>
-                  <a href="mailto:sales@neuroseo.com" className="mt-1 block text-sm font-medium text-muted-foreground hover:text-[#103938] transition-colors">
-                    sales@neuroseo.com
+                  <a href="mailto:sales@seobox.com" className="mt-1 block text-sm font-medium text-muted-foreground hover:text-[#103938] transition-colors">
+                    sales@seobox.com
                   </a>
                 </div>
               </div>

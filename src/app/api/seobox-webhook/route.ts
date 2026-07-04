@@ -2,7 +2,7 @@ import { createHmac, timingSafeEqual } from 'crypto';
 import fs from 'fs';
 import path from 'path';
 
-const SECRET = process.env.NEUROSEO_SIGNING_SECRET || 'dev_secret';
+const SECRET = process.env.SEOBOX_SIGNING_SECRET || 'dev_secret';
 const IS_DEV = process.env.NODE_ENV === 'development';
 
 function valid(raw: string, sig: string) {
@@ -32,7 +32,7 @@ function frontmatter(p: any): string {
     category: routeFor(p.tags),
     date: new Date().toISOString().split('T')[0], // stamp with server time
     author: {
-      name: 'NeuroSEO Author',
+      name: 'Seobox Author',
       role: 'Content Engine',
       avatar: ''
     }
@@ -89,7 +89,7 @@ async function commitToGit(filePath: string, fileContent: string) {
       headers: {
         'Authorization': `Bearer ${token}`,
         'Accept': 'application/vnd.github.v3+json',
-        'User-Agent': 'NeuroSEO-Webhook-Client'
+        'User-Agent': 'Seobox-Webhook-Client'
       }
     });
     if (res.ok) {
@@ -107,10 +107,10 @@ async function commitToGit(filePath: string, fileContent: string) {
       'Authorization': `Bearer ${token}`,
       'Accept': 'application/vnd.github.v3+json',
       'Content-Type': 'application/json',
-      'User-Agent': 'NeuroSEO-Webhook-Client'
+      'User-Agent': 'Seobox-Webhook-Client'
     },
     body: JSON.stringify({
-      message: `content: publish "${filePath}" via NeuroSEO`,
+      message: `content: publish "${filePath}" via Seobox`,
       content: Buffer.from(fileContent).toString('base64'),
       branch: branch,
       sha: sha
@@ -127,14 +127,14 @@ async function commitToGit(filePath: string, fileContent: string) {
 
 export async function POST(req: Request) {
   const raw = await req.text(); // Read raw text before parsing for HMAC
-  const sig = req.headers.get("x-neuroseo-signature") ?? "";
+  const sig = req.headers.get("x-seobox-signature") ?? "";
   
   // In dev, skip signature check if no signature is provided for easy testing
   if (!(IS_DEV && !sig) && !valid(raw, sig)) {
     return new Response("bad signature", { status: 401 });
   }
 
-  if (req.headers.get("x-neuroseo-event") === "ping") {
+  if (req.headers.get("x-seobox-event") === "ping") {
     return Response.json({ ok: true });
   }
 

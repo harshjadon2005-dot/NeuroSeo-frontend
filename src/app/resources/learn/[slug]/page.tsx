@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: `${post.title} — NeuroSEO Learn`,
+    title: `${post.title} — Seobox Learn`,
     description: post.excerpt,
     openGraph: {
       title: post.title,

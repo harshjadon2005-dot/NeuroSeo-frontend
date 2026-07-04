@@ -74,7 +74,7 @@ export function InteractiveCta() {
   };
 
   return (
-    <section id="try-neuroseo" className="relative overflow-hidden bg-white py-24 sm:py-32">
+    <section id="try-seobox" className="relative overflow-hidden bg-white py-24 sm:py-32">
       {/* Background decorations */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#103938]/5 blur-[120px]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.25]" />
@@ -88,13 +88,13 @@ export function InteractiveCta() {
               {/* Badge */}
               <div className="mb-6 flex justify-center">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-[#103938]/10 bg-[#103938]/5 px-4 py-1.5 text-sm font-semibold text-[#103938] shadow-sm">
-                  <Sparkles className="h-4 w-4" /> Try NeuroSEO
+                  <Sparkles className="h-4 w-4" /> Try Seobox
                 </span>
               </div>
               
               {/* Heading */}
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl">
-                See NeuroSEO in Action
+                See Seobox in Action
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
                 Describe what you want to create and experience how AI can automate your SEO workflow.
@@ -221,7 +221,7 @@ export function InteractiveCta() {
                         Create your free account to unlock the full result
                       </h4>
                       <button
-                        onClick={() => window.location.href = `${APP_URL}/signup`}
+                        onClick={() => window.location.href = `/register`}
                         className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#103938] px-8 font-semibold text-white shadow-lg shadow-[#103938]/20 transition-all hover:-translate-y-0.5 hover:bg-[#0d2e2d] active:translate-y-0 sm:w-auto"
                       >
                         Start Free

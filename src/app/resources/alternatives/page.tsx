@@ -4,7 +4,7 @@ import { getPostsByCategory, getFeaturedPost } from '@/lib/resource-data';
 import { Replace, Zap, Check } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Alternatives — NeuroSEO Platform',
+  title: 'Alternatives — Seobox Platform',
   description: 'Find the best alternatives to legacy SEO and content tools.',
 };
 
@@ -21,7 +21,7 @@ export default function AlternativesPage() {
       <div className="border-b border-border/50 bg-muted/20 px-4 py-3">
         <div className="flex items-center gap-2 text-sm font-bold text-foreground">
           <Replace className="h-4 w-4 text-emerald-500" />
-          <span>Switching to NeuroSEO</span>
+          <span>Switching to Seobox</span>
         </div>
       </div>
       <div className="p-2 space-y-1">
@@ -32,7 +32,7 @@ export default function AlternativesPage() {
                 {i === 1 ? <Zap className="h-4 w-4" /> : <div className="h-4 w-4 rounded-sm bg-border" />}
               </div>
               <div>
-                <div className="text-xs font-bold text-foreground">{i === 1 ? 'NeuroSEO' : 'Legacy Tool'}</div>
+                <div className="text-xs font-bold text-foreground">{i === 1 ? 'Seobox' : 'Legacy Tool'}</div>
                 <div className="text-[10px] text-muted-foreground">{i === 1 ? 'Autonomous Pipeline' : 'Manual Briefs'}</div>
               </div>
             </div>
@@ -61,11 +61,7 @@ export default function AlternativesPage() {
           { name: 'Jasper Alts', count: 4, href: '#' },
           { name: 'Frase Alts', count: 3, href: '#' },
         ],
-        trending: [
-          { title: 'Top 7 Surfer SEO Alternatives', href: '#' },
-          { title: 'Why teams are leaving Jasper', href: '#' },
-          { title: 'Best AI Writers in 2026', href: '#' },
-        ]
+        trending: remainingPosts.slice(0, 3).map(p => ({ title: p.title, href: `/resources/alternatives/${p.slug}` }))
       }}
       featured={{ post: featured, visual: AlternativesMockup }}
       posts={remainingPosts}

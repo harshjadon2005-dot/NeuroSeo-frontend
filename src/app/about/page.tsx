@@ -5,8 +5,8 @@ import { ResourceCta } from '@/components/resource-cta';
 import { Target, Lightbulb, Users, Shield, Zap, Heart } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Us — NeuroSEO Platform',
-  description: 'The story, mission, and vision behind NeuroSEO.',
+  title: 'About Us — Seobox Platform',
+  description: 'The story, mission, and vision behind Seobox.',
 };
 
 const VALUES = [
@@ -18,7 +18,7 @@ const VALUES = [
 
 const TIMELINE = [
   { year: '2023', title: 'The Generative Shift', desc: 'As ChatGPT and Perplexity emerged, we realized traditional SEO tools were optimizing for an outdated algorithm.' },
-  { year: '2024', title: 'NeuroSEO v1', desc: 'We launched the first autonomous pipeline capable of formatting content specifically for LLM extraction (GEO).' },
+  { year: '2024', title: 'Seobox v1', desc: 'We launched the first autonomous pipeline capable of formatting content specifically for LLM extraction (GEO).' },
   { year: '2025', title: 'The Trust Engine', desc: 'Integrated our live fact-checking API and originality scoring to protect domains from quality updates.' },
 ];
 
@@ -74,7 +74,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Why we built NeuroSEO */}
+      {/* Why we built Seobox */}
       <section className="py-24">
         <Container>
           <div className="mx-auto max-w-3xl">
@@ -82,7 +82,7 @@ export default function AboutPage() {
               <SectionHeading 
                 align="center"
                 eyebrow="The Story"
-                title="Why we built NeuroSEO"
+                title="Why we built Seobox"
               />
             </Reveal>
             <Reveal delay={100}>
@@ -94,7 +94,7 @@ export default function AboutPage() {
                   We watched as massive publishers lost millions in traffic because their content was too fluffy to be extracted by LLMs like Perplexity and AI Overviews. The web was evolving from "search and click" to "ask and receive".
                 </p>
                 <p>
-                  Existing SEO tools were completely blind to this shift. They kept recommending 2,000-word articles for simple questions. So, we built NeuroSEO: the first platform designed specifically for Generative Engine Optimization (GEO).
+                  Existing SEO tools were completely blind to this shift. They kept recommending 2,000-word articles for simple questions. So, we built Seobox: the first platform designed specifically for Generative Engine Optimization (GEO).
                 </p>
               </div>
             </Reveal>

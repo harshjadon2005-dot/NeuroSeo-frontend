@@ -6,8 +6,8 @@ import { ResourceCta } from '@/components/resource-cta';
 import { Mail, Clock, BookOpen, ExternalLink, ArrowRight, Zap, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact Support — NeuroSEO Platform',
-  description: 'Get in touch with the NeuroSEO support team.',
+  title: 'Contact Support — Seobox Platform',
+  description: 'Get in touch with the Seobox support team.',
 };
 
 export default function SupportPage() {
@@ -60,7 +60,7 @@ export default function SupportPage() {
                     <span className="text-muted-foreground">Response time</span>
                     <span className="font-bold text-emerald-600 flex items-center gap-1"><Clock className="h-4 w-4" /> &lt; 2 hrs</span>
                   </div>
-                  <a href="mailto:support@neuroseo.com" className="flex w-full items-center justify-center gap-2 rounded-full bg-[#103938] px-6 py-3.5 text-sm font-bold text-white transition-all hover:bg-[#0c2a29] hover:shadow-lg">
+                  <a href="mailto:support@seobox.com" className="flex w-full items-center justify-center gap-2 rounded-full bg-[#103938] px-6 py-3.5 text-sm font-bold text-white transition-all hover:bg-[#0c2a29] hover:shadow-lg">
                     Email support <ArrowRight className="h-4 w-4" />
                   </a>
                 </div>
@@ -135,9 +135,9 @@ export default function SupportPage() {
                   <p className="text-muted-foreground leading-relaxed">Connect with 5,000+ SEO professionals on our Discord server to share strategies and get help.</p>
                 </div>
               </div>
-              <button className="shrink-0 rounded-full bg-[#5865F2] px-8 py-4 text-sm font-bold text-white transition-all hover:bg-[#4752C4] hover:shadow-lg hover:shadow-[#5865F2]/20 hover:-translate-y-0.5">
+              <a href="https://discord.gg/seobox" target="_blank" rel="noopener noreferrer" className="shrink-0 rounded-full bg-[#5865F2] px-8 py-4 text-sm font-bold text-white transition-all hover:bg-[#4752C4] hover:shadow-lg hover:shadow-[#5865F2]/20 hover:-translate-y-0.5">
                 Join Discord Server
-              </button>
+              </a>
             </div>
           </Reveal>
         </Container>

@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import { Container, SectionHeading } from '@/components/ui';
 import { ContactDashboard } from '@/components/contact-dashboard';
+import { FaqAccordion } from '@/components/faq-accordion';
 
 export const metadata: Metadata = {
   title: 'Contact us',
-  description: 'Talk to the NeuroSEO team about plans, agency onboarding, or anything else.',
+  description: 'Talk to the Seobox team about plans, agency onboarding, or anything else.',
 };
 
 export default function ContactPage() {
@@ -30,6 +31,36 @@ export default function ContactPage() {
         </div>
 
         <ContactDashboard />
+
+        {/* Contact FAQs */}
+        <div className="mt-24 mb-8">
+          <SectionHeading
+            align="center"
+            eyebrow="Common Questions"
+            title="Before you send that message"
+            sub="We've compiled some of the most common questions our support team receives."
+          />
+          <FaqAccordion 
+            faqs={[
+              {
+                q: "What is your typical response time?",
+                a: "We aim to reply within 1 business day for all standard inquiries. If you are on an Enterprise plan, your dedicated account manager will respond within 2 hours during business hours."
+              },
+              {
+                q: "Can I request a custom Enterprise plan?",
+                a: "Absolutely. If you have unique volume requirements, need custom LLM fine-tuning, or require specific SLA guarantees, please select 'Sales' in the form above and we'll design a custom package for you."
+              },
+              {
+                q: "Do you offer technical support for API integrations?",
+                a: "Yes. Our core engineering team provides direct technical support for custom CMS integrations, API usage, and Webhook configuration for users on our Pro and Enterprise tiers."
+              },
+              {
+                q: "I run an agency. Can I white-label Seobox?",
+                a: "Yes! Our Agency tier includes full white-labeling capabilities, allowing you to generate reports, SERP analysis dashboards, and content drafts with your own branding to present directly to clients."
+              }
+            ]} 
+          />
+        </div>
       </Container>
     </section>
   );

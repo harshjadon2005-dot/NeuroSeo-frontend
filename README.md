@@ -1,6 +1,6 @@
-# neuroseo-marketing
+# seobox-marketing
 
-Marketing site for NeuroSEO — **Next.js 16 (App Router) + React 19 + Tailwind v4 + Inter + Lucide**.
+Marketing site for Seobox — **Next.js 16 (App Router) + React 19 + Tailwind v4 + Inter + Lucide**.
 Follows the InboxKit brand theme (dark teal `#103938`, light mode only) and applies the
 `emil-design-eng` motion principles (custom easing curves, transform/opacity-only animation,
 press feedback, staggered scroll reveals, reduced-motion support).

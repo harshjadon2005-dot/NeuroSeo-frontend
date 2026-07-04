@@ -95,20 +95,29 @@ export function AiWritingMockup() {
           </div>
         </div>
         {/* Editor Area */}
-        <div className="flex-1 p-8 relative">
-          <div className="mt-4 space-y-5">
-            <div className="h-6 w-3/4 rounded-md bg-muted/80" />
-            <div className="space-y-2.5">
-              <div className="h-2 w-full rounded bg-muted/40" />
-              <div className="h-2 w-full rounded bg-muted/40" />
-              <div className="h-2 w-5/6 rounded bg-muted/40" />
-            </div>
-            <div className="h-4 w-1/2 rounded-md bg-muted/60 mt-8" />
-            <div className="space-y-2.5">
-              <div className="h-2 w-full rounded bg-muted/40" />
-              <div className="h-2 w-4/5 rounded bg-muted/40" />
-            </div>
+        <div className="flex-1 p-6 sm:p-8 relative overflow-hidden">
+          <div className="space-y-4 text-foreground/90 font-sans">
+            <h1 className="text-lg sm:text-xl font-black text-[#103938] leading-tight tracking-tight">
+              The Ultimate Guide to B2B
+            </h1>
+            <p className="text-[11px] sm:text-[13px] leading-relaxed text-muted-foreground">
+              In the rapidly evolving landscape of digital marketing, relying on traditional organic growth is no longer sufficient. Modern B2B companies must adapt to generative answer engines.
+            </p>
+            
+            <h2 className="text-sm sm:text-base font-bold text-foreground mt-6 flex items-center gap-2">
+              <span className="flex h-4 w-4 items-center justify-center rounded bg-emerald-100 text-[9px] text-emerald-700">H2</span>
+              Why it matters
+            </h2>
+            <p className="text-[11px] sm:text-[13px] leading-relaxed text-muted-foreground relative">
+              <span className="bg-emerald-50 text-emerald-900 px-1 py-0.5 rounded border-b-2 border-emerald-200">The shift from zero-click searches to AI overviews means your content architecture must prioritize entity relationships.</span>
+              
+              {/* Fake AI typing cursor */}
+              <span className="inline-block w-[2px] h-3.5 bg-emerald-500 ml-1 animate-pulse align-middle"></span>
+            </p>
           </div>
+          
+          {/* Faded overlay at bottom to suggest more content */}
+          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none" />
         </div>
       </div>
     </>
@@ -297,15 +306,25 @@ export function ReportingMockup() {
           <span className="text-[10px] font-medium text-muted-foreground border border-border/80 rounded px-2 py-1">Last 30 Days</span>
         </div>
         
-        <div className="flex items-end justify-between h-24 gap-3 mt-4">
-          {[40, 60, 45, 80, 65, 90, 75, 100].map((h, i) => (
-            <div key={i} className="w-full bg-emerald-500/10 rounded-t-md relative group h-full flex items-end">
-              <div 
-                className="w-full bg-[#103938] rounded-t-md transition-all group-hover:bg-emerald-500" 
-                style={{ height: `${h}%` }} 
-              />
-            </div>
-          ))}
+        <div className="relative mt-8 h-32 w-full">
+          {/* Horizontal Grid Lines */}
+          <div className="absolute inset-0 flex flex-col justify-between pointer-events-none pb-[1px]">
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="w-full h-px bg-border/50" />
+            ))}
+          </div>
+          
+          {/* Bars */}
+          <div className="absolute inset-0 flex items-end justify-between gap-2 sm:gap-3 px-1 pt-4">
+            {[40, 60, 45, 80, 65, 90, 75, 100].map((h, i) => (
+              <div key={i} className="w-full h-full relative group flex items-end justify-center">
+                <div 
+                  className="w-full max-w-[24px] sm:max-w-[32px] bg-[#103938] rounded-t-md transition-all group-hover:bg-emerald-500 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]" 
+                  style={{ height: `${h}%` }} 
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>

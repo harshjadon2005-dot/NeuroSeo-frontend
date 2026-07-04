@@ -5,8 +5,8 @@ import { ResourceCta } from '@/components/resource-cta';
 import { Search, FileText, ShoppingBag, Layout, FileBox, Webhook, Code, Database, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Integrations — NeuroSEO Platform',
-  description: 'Connect NeuroSEO to your favorite CMS, analytics, and data tools.',
+  title: 'Integrations — Seobox Platform',
+  description: 'Connect Seobox to your favorite CMS, analytics, and data tools.',
 };
 
 const INTEGRATIONS = [
@@ -59,7 +59,7 @@ const INTEGRATIONS = [
     id: 'zapier',
     name: 'Zapier',
     category: 'Automation',
-    description: 'Connect NeuroSEO to over 5,000+ apps. Trigger workflows based on publishing events.',
+    description: 'Connect Seobox to over 5,000+ apps. Trigger workflows based on publishing events.',
     status: 'Available',
     icon: <img src="https://cdn.simpleicons.org/zapier/FF4A00" alt="Zapier" className="h-8 w-8" />,
     benefits: ['Custom automation rules', 'Slack/Discord notifications', 'Google Sheets sync'],
@@ -99,7 +99,7 @@ export default function IntegrationsPage() {
             </Reveal>
             <Reveal delay={100}>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                NeuroSEO connects seamlessly with the tools you already use, creating a frictionless workflow from keyword research to final publication.
+                Seobox connects seamlessly with the tools you already use, creating a frictionless workflow from keyword research to final publication.
               </p>
             </Reveal>
           </div>

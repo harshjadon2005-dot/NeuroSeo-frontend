@@ -6,8 +6,8 @@ import { ResourceCta } from '@/components/resource-cta';
 import { Book, Settings, Folder, Share2, CreditCard, LayoutTemplate, LineChart, LayoutDashboard, Link2, LifeBuoy, ArrowRight, FileText } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Documentation — NeuroSEO Platform',
-  description: 'Everything you need to know about setting up and using the NeuroSEO platform.',
+  title: 'Documentation — Seobox Platform',
+  description: 'Everything you need to know about setting up and using the Seobox platform.',
 };
 
 const CATEGORIES = [

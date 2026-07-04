@@ -4,8 +4,8 @@ import { Container } from '@/components/ui';
 import { Reveal } from '@/components/reveal';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — NeuroSEO Platform',
-  description: 'How NeuroSEO collects, uses, and protects your data.',
+  title: 'Privacy Policy — Seobox Platform',
+  description: 'How Seobox collects, uses, and protects your data.',
 };
 
 const SECTIONS = [
@@ -67,7 +67,7 @@ export default function PrivacyPage() {
                 <Reveal>
                   <h2>1. Introduction</h2>
                   <p>
-                    Welcome to NeuroSEO ("we", "our", or "us"). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at privacy@neuroseo.com.
+                    Welcome to Seobox ("we", "our", or "us"). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at privacy@seobox.com.
                   </p>
                   <p>
                     This privacy policy applies to all information collected through our Services (which, as described above, includes our Website), as well as any related services, sales, marketing, or events.
@@ -111,7 +111,7 @@ export default function PrivacyPage() {
                     <strong>We do not use your proprietary data to train our foundational models.</strong>
                   </p>
                   <p>
-                    Any content you generate, seed keywords you research, or drafts you publish through NeuroSEO remain strictly confidential. If you opt-in to custom fine-tuning (Enterprise tier), that model is isolated entirely to your workspace and is never shared.
+                    Any content you generate, seed keywords you research, or drafts you publish through Seobox remain strictly confidential. If you opt-in to custom fine-tuning (Enterprise tier), that model is isolated entirely to your workspace and is never shared.
                   </p>
                 </Reveal>
               </div>
@@ -168,9 +168,9 @@ export default function PrivacyPage() {
                     If you have questions or comments about this notice, you may email us at:
                   </p>
                   <p>
-                    <strong>NeuroSEO Inc.</strong><br />
+                    <strong>Seobox Inc.</strong><br />
                     Data Protection Officer<br />
-                    privacy@neuroseo.com
+                    privacy@seobox.com
                   </p>
                 </Reveal>
               </div>

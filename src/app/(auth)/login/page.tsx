@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Login — NeuroSEO Platform',
+  title: 'Login — Seobox Platform',
   description: 'Sign in to access your dashboard and pipelines.',
 };
 
@@ -74,8 +74,8 @@ export default function LoginPage() {
         </form>
 
         <div className="mt-8 pt-6 border-t border-border/40 text-center text-[13px] text-muted-foreground">
-          New to NeuroSEO?{' '}
-          <Link href="/signup" className="font-bold text-[#E56E3A] hover:underline transition-colors">
+          New to Seobox?{' '}
+          <Link href="/register" className="font-bold text-[#E56E3A] hover:underline transition-colors">
             Create an account
           </Link>
         </div>
