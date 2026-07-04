@@ -4,7 +4,7 @@ import { getPostsByCategory, getFeaturedPost } from '@/lib/resource-data';
 import { Settings2, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Free SEO Tools — NeuroSEO Platform',
+  title: 'Free SEO Tools — Seobox Platform',
   description: 'Free utilities for keyword difficulty, schema generation, and technical SEO.',
 };
 

@@ -5,7 +5,7 @@ import { FaqAccordion } from '@/components/faq-accordion';
 
 export const metadata: Metadata = {
   title: 'Contact us',
-  description: 'Talk to the NeuroSEO team about plans, agency onboarding, or anything else.',
+  description: 'Talk to the Seobox team about plans, agency onboarding, or anything else.',
 };
 
 export default function ContactPage() {
@@ -55,7 +55,7 @@ export default function ContactPage() {
                 a: "Yes. Our core engineering team provides direct technical support for custom CMS integrations, API usage, and Webhook configuration for users on our Pro and Enterprise tiers."
               },
               {
-                q: "I run an agency. Can I white-label NeuroSEO?",
+                q: "I run an agency. Can I white-label Seobox?",
                 a: "Yes! Our Agency tier includes full white-labeling capabilities, allowing you to generate reports, SERP analysis dashboards, and content drafts with your own branding to present directly to clients."
               }
             ]} 

@@ -4,7 +4,7 @@ import { getPostsByCategory, getFeaturedPost } from '@/lib/resource-data';
 import { Search, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Learn — NeuroSEO Platform',
+  title: 'Learn — Seobox Platform',
   description: 'Educational guides and resources for modern search optimization.',
 };
 

@@ -4,8 +4,8 @@ import { Container } from '@/components/ui';
 import { Reveal } from '@/components/reveal';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — NeuroSEO Platform',
-  description: 'Terms and conditions for using the NeuroSEO platform.',
+  title: 'Terms of Service — Seobox Platform',
+  description: 'Terms and conditions for using the Seobox platform.',
 };
 
 const SECTIONS = [
@@ -67,7 +67,7 @@ export default function TermsPage() {
                 <Reveal>
                   <h2>1. Agreement to Terms</h2>
                   <p>
-                    These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and NeuroSEO ("Company", "we", "us", or "our"), concerning your access to and use of the neuroseo.com website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto.
+                    These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and Seobox ("Company", "we", "us", or "our"), concerning your access to and use of the seobox.com website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto.
                   </p>
                   <p>
                     You agree that by accessing the Site, you have read, understood, and agreed to be bound by all of these Terms of Service. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS OF SERVICE, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SITE AND YOU MUST DISCONTINUE USE IMMEDIATELY.
@@ -82,7 +82,7 @@ export default function TermsPage() {
                     Unless otherwise indicated, the Site is our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the Site (collectively, the "Content") and the trademarks, service marks, and logos contained therein (the "Marks") are owned or controlled by us or licensed to us.
                   </p>
                   <p>
-                    <strong>Ownership of Generated Content:</strong> You retain full ownership, copyright, and intellectual property rights to all articles, blog posts, and text generated using the NeuroSEO platform through your paid subscription.
+                    <strong>Ownership of Generated Content:</strong> You retain full ownership, copyright, and intellectual property rights to all articles, blog posts, and text generated using the Seobox platform through your paid subscription.
                   </p>
                 </Reveal>
               </div>
@@ -132,7 +132,7 @@ export default function TermsPage() {
                     You can cancel your subscription at any time by logging into your account or contacting us using the contact information provided below. Your cancellation will take effect at the end of the current paid term.
                   </p>
                   <p>
-                    If you are unsatisfied with our services, please email us at support@neuroseo.com. Refunds are handled on a case-by-case basis according to our refund policy.
+                    If you are unsatisfied with our services, please email us at support@seobox.com. Refunds are handled on a case-by-case basis according to our refund policy.
                   </p>
                 </Reveal>
               </div>
@@ -156,9 +156,9 @@ export default function TermsPage() {
                     In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at:
                   </p>
                   <p>
-                    <strong>NeuroSEO Inc.</strong><br />
+                    <strong>Seobox Inc.</strong><br />
                     Legal Department<br />
-                    legal@neuroseo.com
+                    legal@seobox.com
                   </p>
                 </Reveal>
               </div>

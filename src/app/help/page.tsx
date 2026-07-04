@@ -7,8 +7,8 @@ import { HelpArticles } from '@/components/help-articles';
 import { Search, User, CreditCard, Share2, Sparkles, Coins, Link2, Code, HelpCircle, ArrowRight, BookOpen } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Help Center — NeuroSEO Platform',
-  description: 'Find answers, guides, and tutorials for the NeuroSEO platform.',
+  title: 'Help Center — Seobox Platform',
+  description: 'Find answers, guides, and tutorials for the Seobox platform.',
 };
 
 const CATEGORIES = [
@@ -25,7 +25,7 @@ const CATEGORIES = [
 const POPULAR_ARTICLES = [
   {
     title: 'How to connect WordPress via the REST API',
-    content: 'To connect your WordPress site, navigate to Settings > Integrations in your dashboard. Generate a new API Application password in WordPress, and paste the credentials into NeuroSEO to enable 1-click publishing.',
+    content: 'To connect your WordPress site, navigate to Settings > Integrations in your dashboard. Generate a new API Application password in WordPress, and paste the credentials into Seobox to enable 1-click publishing.',
   },
   {
     title: 'Understanding how credits are calculated per generation',
@@ -41,7 +41,7 @@ const POPULAR_ARTICLES = [
   },
   {
     title: 'Configuring custom domain tracking for GEO metrics',
-    content: 'Connect your Google Search Console via OAuth in the Analytics tab. Once verified, NeuroSEO will cross-reference your GSC data with our Perplexity API to track your exact citation rates.',
+    content: 'Connect your Google Search Console via OAuth in the Analytics tab. Once verified, Seobox will cross-reference your GSC data with our Perplexity API to track your exact citation rates.',
   },
   {
     title: 'Upgrading from Pro to Enterprise tier',

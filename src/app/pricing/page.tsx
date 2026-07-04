@@ -6,7 +6,7 @@ import { PricingCards } from '@/components/pricing-cards';
 
 export const metadata: Metadata = {
   title: 'Pricing',
-  description: 'Simple, credit-based pricing for NeuroSEO. Start free, scale as you publish.',
+  description: 'Simple, credit-based pricing for Seobox. Start free, scale as you publish.',
 };
 
 export default function PricingPage() {

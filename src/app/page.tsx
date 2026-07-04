@@ -94,7 +94,7 @@ const SPOTLIGHTS = [
     icon: Search,
     eyebrow: 'Research',
     title: 'Decisions backed by real search data',
-    desc: 'Every article starts from live keyword volume, difficulty, and SERP analysis — not guesswork. NeuroSEO continuously scans your niche for content gaps competitors are ranking for and flags pages losing position before the traffic drops.',
+    desc: 'Every article starts from live keyword volume, difficulty, and SERP analysis — not guesswork. Seobox continuously scans your niche for content gaps competitors are ranking for and flags pages losing position before the traffic drops.',
     points: ['Live volume & difficulty from DataForSEO', 'Automatic content-gap discovery', 'Ranking-decay alerts from Search Console'],
   },
   {
@@ -108,7 +108,7 @@ const SPOTLIGHTS = [
     icon: Bot,
     eyebrow: 'AI visibility',
     title: 'Win the answer, not just the link',
-    desc: 'Search is moving into AI answers. NeuroSEO probes ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews to see whether they cite your brand — then structures content to improve those mentions over time.',
+    desc: 'Search is moving into AI answers. Seobox probes ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews to see whether they cite your brand — then structures content to improve those mentions over time.',
     points: ['Multi-engine GEO probing', 'Brand-mention tracking over time', 'Content structured for AI retrieval'],
   },
 ];
@@ -125,9 +125,9 @@ const COMPARISON_CARDS = [
     id: 'time',
     title: 'Time to First Published Article',
     icon: Clock,
-    neuroseoValue: 'Minutes',
-    neuroseoSubtitle: 'Automated 18-stage pipeline',
-    neuroseoScore: 100,
+    seoboxValue: 'Minutes',
+    seoboxSubtitle: 'Automated 18-stage pipeline',
+    seoboxScore: 100,
     manualValue: 'Days to weeks',
     manualSubtitle: 'Writing, editing, formatting',
     manualScore: 15,
@@ -137,9 +137,9 @@ const COMPARISON_CARDS = [
     id: 'research',
     title: 'Keyword & SERP Data',
     icon: Search,
-    neuroseoValue: 'Included natively',
-    neuroseoSubtitle: 'Real-time DataForSEO API',
-    neuroseoScore: 100,
+    seoboxValue: 'Included natively',
+    seoboxSubtitle: 'Real-time DataForSEO API',
+    seoboxScore: 100,
     manualValue: 'Requires extra tools',
     manualSubtitle: 'Ahrefs, Semrush, etc.',
     manualScore: 40,
@@ -149,9 +149,9 @@ const COMPARISON_CARDS = [
     id: 'quality',
     title: 'Quality & AI Detection',
     icon: ShieldCheck,
-    neuroseoValue: 'Automated Gates',
-    neuroseoSubtitle: 'Plagiarism & AI screening',
-    neuroseoScore: 100,
+    seoboxValue: 'Automated Gates',
+    seoboxSubtitle: 'Plagiarism & AI screening',
+    seoboxScore: 100,
     manualValue: 'Manual Review',
     manualSubtitle: 'Human editors & checkers',
     manualScore: 25,
@@ -161,9 +161,9 @@ const COMPARISON_CARDS = [
     id: 'geo',
     title: 'AI Visibility Tracking',
     icon: TrendingUp,
-    neuroseoValue: 'Continuous Probing',
-    neuroseoSubtitle: 'ChatGPT, Claude, Gemini',
-    neuroseoScore: 100,
+    seoboxValue: 'Continuous Probing',
+    seoboxSubtitle: 'ChatGPT, Claude, Gemini',
+    seoboxScore: 100,
     manualValue: 'Blind Spots',
     manualSubtitle: 'No standardized way to track',
     manualScore: 10,
@@ -173,9 +173,9 @@ const COMPARISON_CARDS = [
     id: 'publishing',
     title: 'CMS Publishing',
     icon: Rocket,
-    neuroseoValue: 'One-click / Auto',
-    neuroseoSubtitle: 'WordPress, Webflow, Shopify',
-    neuroseoScore: 100,
+    seoboxValue: 'One-click / Auto',
+    seoboxSubtitle: 'WordPress, Webflow, Shopify',
+    seoboxScore: 100,
     manualValue: 'Copy & Paste',
     manualSubtitle: 'Manual formatting & image uploads',
     manualScore: 20,
@@ -185,9 +185,9 @@ const COMPARISON_CARDS = [
     id: 'scale',
     title: 'Scalability',
     icon: Globe,
-    neuroseoValue: '100+ Sites',
-    neuroseoSubtitle: 'Run entire portfolios from one hub',
-    neuroseoScore: 100,
+    seoboxValue: '100+ Sites',
+    seoboxSubtitle: 'Run entire portfolios from one hub',
+    seoboxScore: 100,
     manualValue: '1-3 Sites',
     manualSubtitle: 'Requires hiring more staff to scale',
     manualScore: 30,
@@ -215,7 +215,7 @@ const TESTIMONIALS = [
     image: 'https://randomuser.me/api/portraits/women/68.jpg'
   },
   { 
-    quote: 'I used to spend 15 hours a week just building content briefs. NeuroSEO generates them instantly based on live SERP data.', 
+    quote: 'I used to spend 15 hours a week just building content briefs. Seobox generates them instantly based on live SERP data.', 
     name: 'Marcus T.', 
     role: 'Content Strategist',
     image: 'https://randomuser.me/api/portraits/men/46.jpg'
@@ -239,7 +239,7 @@ const TESTIMONIALS = [
     image: 'https://randomuser.me/api/portraits/women/33.jpg'
   },
   { 
-    quote: 'Our agency margins doubled since moving to NeuroSEO. We deliver higher quality content in a fraction of the time.', 
+    quote: 'Our agency margins doubled since moving to Seobox. We deliver higher quality content in a fraction of the time.', 
     name: 'Tom W.', 
     role: 'Agency Partner',
     image: 'https://randomuser.me/api/portraits/men/67.jpg'
@@ -253,7 +253,7 @@ const TESTIMONIALS = [
 ];
 
 const FAQ_PREVIEW = [
-  { q: 'Do I need my own API keys?', a: 'No. NeuroSEO ships with research, writing, and publishing wired in. Bring your own keys only if you want to.' },
+  { q: 'Do I need my own API keys?', a: 'No. Seobox ships with research, writing, and publishing wired in. Bring your own keys only if you want to.' },
   { q: 'Will the content read like AI?', a: 'Every draft runs through AI-detection and originality gates, and you set the brand voice, tone, and banned words per site.' },
   { q: 'Which CMSs can it publish to?', a: 'WordPress, Webflow, and Shopify natively, plus any headless CMS via signed webhooks.' },
   { q: 'Can I review before anything goes live?', a: 'Yes. Everything lands in a review queue by default. Auto-publish is opt-in and gated by your own score thresholds.' },
@@ -509,7 +509,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Who it's for"
             title="One engine, every content team"
-            sub="However you grow with search, NeuroSEO adapts to the workflow."
+            sub="However you grow with search, Seobox adapts to the workflow."
           />
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {USE_CASES.map((u, i) => (
@@ -533,9 +533,9 @@ export default function HomePage() {
         <Container>
           <div className="mb-16">
             <SectionHeading
-              eyebrow="Why NeuroSEO"
-              title="Why Teams Choose NeuroSEO"
-              sub="What it takes to ship trustworthy content at scale — with and without NeuroSEO."
+              eyebrow="Why Seobox"
+              title="Why Teams Choose Seobox"
+              sub="What it takes to ship trustworthy content at scale — with and without Seobox."
             />
           </div>
           
@@ -575,7 +575,7 @@ export default function HomePage() {
                 <ArrowRight className="h-4 w-4" />
               </Button>
               <Button href="/pricing" variant="primary" className="w-full sm:w-auto">
-                Try NeuroSEO
+                Try Seobox
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>

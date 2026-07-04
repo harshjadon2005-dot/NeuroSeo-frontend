@@ -7,7 +7,7 @@ import { CtaSection } from '@/components/cta-section';
 
 export const metadata: Metadata = {
   title: 'Resources',
-  description: 'Learn SEO & GEO fundamentals and follow step-by-step playbooks to get the most from NeuroSEO.',
+  description: 'Learn SEO & GEO fundamentals and follow step-by-step playbooks to get the most from Seobox.',
 };
 
 const SECTIONS = [

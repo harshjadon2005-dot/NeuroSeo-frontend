@@ -7,7 +7,7 @@ import { GuideDashboard } from '@/components/guide-dashboard';
 import { ResourceCta } from '@/components/resource-cta';
 export const metadata: Metadata = {
   title: 'Guide — step-by-step playbooks',
-  description: 'Practical, step-by-step playbooks for getting the most out of NeuroSEO.',
+  description: 'Practical, step-by-step playbooks for getting the most out of Seobox.',
 };
 
 

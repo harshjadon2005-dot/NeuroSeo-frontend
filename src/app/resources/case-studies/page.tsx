@@ -4,8 +4,8 @@ import { getPostsByCategory, getFeaturedPost } from '@/lib/resource-data';
 import { TrendingUp, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Case Studies — NeuroSEO Platform',
-  description: 'Read how leading brands scale organic growth with NeuroSEO.',
+  title: 'Case Studies — Seobox Platform',
+  description: 'Read how leading brands scale organic growth with Seobox.',
 };
 
 export default function CaseStudiesPage() {
@@ -55,7 +55,7 @@ export default function CaseStudiesPage() {
       baseRoute="/resources/case-studies"
       hero={{
         title: "Customer Success Stories",
-        description: "See how the fastest growing SaaS companies and agencies are using NeuroSEO's autonomous pipeline to dominate organic search.",
+        description: "See how the fastest growing SaaS companies and agencies are using Seobox's autonomous pipeline to dominate organic search.",
         stats: [
           { label: 'Published Studies', value: '50+' },
           { label: 'Avg Traffic Lift', value: '215%' },

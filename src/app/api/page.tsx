@@ -5,8 +5,8 @@ import { ResourceCta } from '@/components/resource-cta';
 import { Code2, Key, Globe, Terminal, Box, Database, Webhook } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'API Reference — NeuroSEO Platform',
-  description: 'Integrate NeuroSEO into your custom stack with our developer API.',
+  title: 'API Reference — Seobox Platform',
+  description: 'Integrate Seobox into your custom stack with our developer API.',
 };
 
 const ENDPOINTS = [
@@ -15,7 +15,7 @@ const ENDPOINTS = [
     path: '/v1/generate',
     title: 'Generate Article',
     desc: 'Initiate a new content generation pipeline for a given keyword or topic.',
-    req: `curl -X POST https://api.neuroseo.com/v1/generate \\
+    req: `curl -X POST https://api.seobox.com/v1/generate \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -37,7 +37,7 @@ const ENDPOINTS = [
     path: '/v1/keywords',
     title: 'Keyword Research',
     desc: 'Fetch search volume, difficulty, and intent clustering for a seed keyword.',
-    req: `curl -X GET https://api.neuroseo.com/v1/keywords?seed=saas+marketing \\
+    req: `curl -X GET https://api.seobox.com/v1/keywords?seed=saas+marketing \\
   -H "Authorization: Bearer YOUR_API_KEY"`,
     res: `{
   "status": "success",
@@ -56,7 +56,7 @@ const ENDPOINTS = [
     path: '/v1/publish',
     title: 'Publish to CMS',
     desc: 'Push an approved article draft directly to your configured CMS integration.',
-    req: `curl -X POST https://api.neuroseo.com/v1/publish \\
+    req: `curl -X POST https://api.seobox.com/v1/publish \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{

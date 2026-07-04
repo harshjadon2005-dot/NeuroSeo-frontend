@@ -19,11 +19,11 @@ export function HeroSection() {
 
   const handleScrollToCta = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
     e.preventDefault();
-    const cta = document.getElementById('try-neuroseo');
+    const cta = document.getElementById('try-seobox');
     if (cta) {
       cta.scrollIntoView({ behavior: 'smooth' });
     } else {
-      window.location.href = '#try-neuroseo';
+      window.location.href = '#try-seobox';
     }
   };
 
@@ -83,13 +83,13 @@ export function HeroSection() {
           </Reveal>
           <Reveal delay={120}>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-              NeuroSEO researches keywords, writes ranking articles, fact-checks them, scores SEO and AI visibility,
+              Seobox researches keywords, writes ranking articles, fact-checks them, scores SEO and AI visibility,
               and publishes to your CMS — continuously, on autopilot.
             </p>
           </Reveal>
           <Reveal delay={180}>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row w-full max-w-md mx-auto sm:max-w-none">
-              <Button href="#try-neuroseo" size="lg" onClick={handleScrollToCta} className="group w-full sm:w-auto sm:min-w-[240px]">
+              <Button href="#try-seobox" size="lg" onClick={handleScrollToCta} className="group w-full sm:w-auto sm:min-w-[240px]">
                 Generate your first article
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -130,7 +130,7 @@ export function HeroSection() {
                   <div className="h-3 w-3 rounded-full bg-[#27c93f]" />
                 </div>
                 <div className="mx-auto flex h-6 w-full max-w-md items-center justify-center rounded-md bg-white text-xs text-muted-foreground shadow-sm ring-1 ring-border/50">
-                  <span className="flex items-center gap-1.5"><Search className="h-3 w-3" /> neuroseo.com/app</span>
+                  <span className="flex items-center gap-1.5"><Search className="h-3 w-3" /> seobox.com/app</span>
                 </div>
               </div>
               
@@ -142,7 +142,7 @@ export function HeroSection() {
                     <div className="h-6 w-6 rounded bg-[#103938] flex items-center justify-center shadow-sm">
                       <span className="text-[10px] text-white">N</span>
                     </div> 
-                    NeuroSEO
+                    Seobox
                   </div>
                   <div className="space-y-1">
                     {['Generator', 'Articles', 'Keywords', 'Integrations'].map((tab) => (

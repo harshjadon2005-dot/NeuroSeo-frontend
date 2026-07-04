@@ -4,7 +4,7 @@ import { getPostsByCategory, getFeaturedPost } from '@/lib/resource-data';
 import { Scale, Zap, Database } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Compare — NeuroSEO Platform',
+  title: 'Compare — Seobox Platform',
   description: 'Head-to-head product comparisons for modern SEO teams.',
 };
 
@@ -21,7 +21,7 @@ export default function ComparePage() {
       <div className="flex-1 space-y-4">
         <div className="flex items-center gap-2 text-[#103938]">
           <Database className="h-5 w-5" />
-          <span className="font-black text-sm">NeuroSEO</span>
+          <span className="font-black text-sm">Seobox</span>
         </div>
         <div className="space-y-2">
           <div className="h-6 w-full rounded bg-emerald-500/20" />
@@ -54,7 +54,7 @@ export default function ComparePage() {
       baseRoute="/resources/compare"
       hero={{
         title: "Head-to-Head Comparisons",
-        description: "See exactly how NeuroSEO stacks up against legacy platforms. Real data, objective feature comparisons, and clear verdicts.",
+        description: "See exactly how Seobox stacks up against legacy platforms. Real data, objective feature comparisons, and clear verdicts.",
         stats: [
           { label: 'Platform Breakdowns', value: '18' },
           { label: 'Feature Matrices', value: '45+' },

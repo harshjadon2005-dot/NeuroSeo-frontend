@@ -5,7 +5,7 @@ import { FaqDashboard } from '@/components/faq-dashboard';
 
 export const metadata: Metadata = {
   title: 'FAQ',
-  description: 'Answers to common questions about NeuroSEO — pipeline, publishing, credits, and AI visibility.',
+  description: 'Answers to common questions about Seobox — pipeline, publishing, credits, and AI visibility.',
 };
 
 export default function FaqPage() {
@@ -30,7 +30,7 @@ export default function FaqPage() {
               Questions, Answered
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Everything you need to know about how NeuroSEO works. Explore categories, search for answers, or reach out to our team.
+              Everything you need to know about how Seobox works. Explore categories, search for answers, or reach out to our team.
             </p>
           </div>
           

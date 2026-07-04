@@ -1,15 +1,15 @@
-# PRD — Connecting Frontend Sites to NeuroSEO (Auto-Publish Blogs)
+# PRD — Connecting Frontend Sites to Seobox (Auto-Publish Blogs)
 
 **Owner:** Aditya
 **Status:** Ready to build
-**Applies to:** Every external frontend site you want NeuroSEO to publish into (React SPA + Next.js).
-**Related:** `neuroseo-api/src/services/cms/headless.publisher.ts`, `neuroseo-api/src/models/site.model.ts`
+**Applies to:** Every external frontend site you want Seobox to publish into (React SPA + Next.js).
+**Related:** `seobox-api/src/services/cms/headless.publisher.ts`, `seobox-api/src/models/site.model.ts`
 
 ---
 
 ## 1. Goal
 
-Today you write each blog by hand (MDX/markdown files or components), commit, and `git push` — your build renders it on `/blog`, `/compare`, `/alternatives`. This PRD makes NeuroSEO do that "write-file-and-push" step automatically, so an approved article in the NeuroSEO dashboard lands on the target site with **no change to your existing rendering**.
+Today you write each blog by hand (MDX/markdown files or components), commit, and `git push` — your build renders it on `/blog`, `/compare`, `/alternatives`. This PRD makes Seobox do that "write-file-and-push" step automatically, so an approved article in the Seobox dashboard lands on the target site with **no change to your existing rendering**.
 
 **Non-goal:** Rebuilding your blog UI. Your `/blog`, `/compare`, `/alternatives` pages stay exactly as they are — we only feed them new source files.
 
@@ -17,9 +17,9 @@ Today you write each blog by hand (MDX/markdown files or components), commit, an
 
 ## 2. Why this works with zero rendering changes
 
-NeuroSEO already ships a **`headless` CMS publisher**. When you connect a site as type `headless`, publishing a blog sends a **signed HTTP POST** to a webhook URL you own. We build a small receiver per site that:
+Seobox already ships a **`headless` CMS publisher**. When you connect a site as type `headless`, publishing a blog sends a **signed HTTP POST** to a webhook URL you own. We build a small receiver per site that:
 
-1. Verifies the request is really from NeuroSEO (HMAC signature).
+1. Verifies the request is really from Seobox (HMAC signature).
 2. Converts the payload into **the exact frontmatter + file format your site already uses**.
 3. Commits that file to your site's Git repo via the GitHub API (= your current `git push`, automated).
 4. Your existing CI/CD redeploys → the post is live.
@@ -27,8 +27,8 @@ NeuroSEO already ships a **`headless` CMS publisher**. When you connect a site a
 Because step 2 outputs the *same files you write by hand today*, `/blog` etc. render them with no code changes.
 
 ```
-NeuroSEO (approve/publish)
-      │  POST + X-NeuroSEO-Signature (HMAC-SHA256)
+Seobox (approve/publish)
+      │  POST + X-Seobox-Signature (HMAC-SHA256)
       ▼
 [Your webhook receiver]  ── verify sig ──► reject if bad
       │
@@ -39,21 +39,21 @@ GitHub API: commit content/blog/<slug>.mdx  (or /compare, /alternatives)
       ▼
 CI/CD auto-deploy ──► post live on existing /blog route
       │
-      └──► respond 200 { id, url }  (NeuroSEO stores as cms_post_id + published_url)
+      └──► respond 200 { id, url }  (Seobox stores as cms_post_id + published_url)
 ```
 
 ---
 
 ## 3. The contract (authoritative — from `headless.publisher.ts`)
 
-### Request NeuroSEO sends you
+### Request Seobox sends you
 
 **Headers**
 | Header | Value |
 |---|---|
 | `Content-Type` | `application/json` |
-| `X-NeuroSEO-Signature` | `HMAC-SHA256(rawBody, signing_secret)` as lowercase hex |
-| `X-NeuroSEO-Event` | `post.publish` on real publishes; `ping` on connection test |
+| `X-Seobox-Signature` | `HMAC-SHA256(rawBody, signing_secret)` as lowercase hex |
+| `X-Seobox-Event` | `post.publish` on real publishes; `ping` on connection test |
 
 **Body (when `format = markdown` — recommended for you)**
 ```json
@@ -80,7 +80,7 @@ CI/CD auto-deploy ──► post live on existing /blog route
 ```json
 { "id": "how-x-beats-y", "url": "https://yoursite.com/blog/how-x-beats-y" }
 ```
-NeuroSEO stores `id` → `cms_post_id`, `url` → `published_url`. If you can't compute the final URL synchronously, return the deterministic URL you *will* deploy to (slug-based).
+Seobox stores `id` → `cms_post_id`, `url` → `published_url`. If you can't compute the final URL synchronously, return the deterministic URL you *will* deploy to (slug-based).
 
 ### Signature verification (critical)
 
@@ -94,7 +94,7 @@ NeuroSEO stores `id` → `cms_post_id`, `url` → `published_url`. If you can't 
 
 ### 4.1 A webhook receiver endpoint
 
-- **Next.js sites:** an App Router route handler, e.g. `app/api/neuroseo-webhook/route.ts` (must read the raw body — do **not** rely on the auto-parsed JSON for signature checking).
+- **Next.js sites:** an App Router route handler, e.g. `app/api/seobox-webhook/route.ts` (must read the raw body — do **not** rely on the auto-parsed JSON for signature checking).
 - **React SPA sites (Vite/CRA, no server):** a serverless function on your host — Vercel/Netlify function, Cloudflare Worker, or a tiny Express service. Same logic; it just needs to run server-side to hold the secret and call the GitHub API.
 
 **Optional — one shared gateway:** Instead of an endpoint per site, you may host a single "publish gateway" service that receives all sites' webhooks and commits to the correct repo based on the site. Simpler to maintain, one place to store GitHub tokens. Per-site endpoints are fine too — pick one and note it in §9.
@@ -103,9 +103,9 @@ NeuroSEO stores `id` → `cms_post_id`, `url` → `published_url`. If you can't 
 
 ### 4.3 A payload → your-format mapper (the part that differs per site)
 
-This is the only real per-site work. Map NeuroSEO fields into **your existing frontmatter schema**. Fill this table per site before coding:
+This is the only real per-site work. Map Seobox fields into **your existing frontmatter schema**. Fill this table per site before coding:
 
-| Your frontmatter key | NeuroSEO field | Notes |
+| Your frontmatter key | Seobox field | Notes |
 |---|---|---|
 | `title` | `title` | |
 | `description` / `seoDescription` | `meta_description` | |
@@ -137,15 +137,15 @@ Markdown body…
 
 ### 4.4 Content-type routing (`/blog` vs `/compare` vs `/alternatives`)
 
-NeuroSEO's payload has no native "content type" field, so route by a **convention**:
-- **By tag:** if `tags` includes `compare` → write to `content/compare/`, `alternatives` → `content/alternatives/`, else default `content/blog/`. (Set these tags when generating in NeuroSEO.)
+Seobox's payload has no native "content type" field, so route by a **convention**:
+- **By tag:** if `tags` includes `compare` → write to `content/compare/`, `alternatives` → `content/alternatives/`, else default `content/blog/`. (Set these tags when generating in Seobox.)
 - **or by slug prefix:** `compare-…`, `vs-…`, `alternatives-…`.
-- Document the chosen convention so whoever generates content in NeuroSEO tags/names articles correctly. If unsure, **start with `/blog` only** and add `/compare`, `/alternatives` routing once the blog path is proven.
+- Document the chosen convention so whoever generates content in Seobox tags/names articles correctly. If unsure, **start with `/blog` only** and add `/compare`, `/alternatives` routing once the blog path is proven.
 
 ### 4.5 Commit to Git (replaces your manual push)
 
 - Use the GitHub REST API (`PUT /repos/{owner}/{repo}/contents/{path}`) or Octokit with a fine-grained PAT (repo contents: read/write).
-- Commit message e.g. `content: publish "<title>" via NeuroSEO`.
+- Commit message e.g. `content: publish "<title>" via Seobox`.
 - Target the branch your deploy watches (usually `main`).
 
 ### 4.6 Idempotency / updates (no duplicates)
@@ -158,10 +158,10 @@ NeuroSEO's payload has no native "content type" field, so route by a **conventio
 ## 5. Security requirements
 
 - `signing_secret` and the GitHub token live in **server-side env vars only** — never in client React bundles.
-- Always verify `X-NeuroSEO-Signature` with a constant-time compare; `401` on mismatch.
-- Ignore/allow `X-NeuroSEO-Event: ping` cheaply (return 200 without committing).
+- Always verify `X-Seobox-Signature` with a constant-time compare; `401` on mismatch.
+- Ignore/allow `X-Seobox-Event: ping` cheaply (return 200 without committing).
 - Rate-limit / size-limit the endpoint (reject bodies over ~1–2 MB).
-- Optionally allowlist NeuroSEO's egress IP if you have one; the HMAC is the primary guard.
+- Optionally allowlist Seobox's egress IP if you have one; the HMAC is the primary guard.
 
 ---
 
@@ -169,7 +169,7 @@ NeuroSEO's payload has no native "content type" field, so route by a **conventio
 
 | Var | Purpose |
 |---|---|
-| `NEUROSEO_SIGNING_SECRET` | Same secret you enter in the NeuroSEO dashboard for this site |
+| `SEOBOX_SIGNING_SECRET` | Same secret you enter in the Seobox dashboard for this site |
 | `GITHUB_TOKEN` | Fine-grained PAT with contents:write on this repo |
 | `GITHUB_REPO` | `owner/repo` |
 | `GITHUB_BRANCH` | e.g. `main` |
@@ -178,14 +178,14 @@ NeuroSEO's payload has no native "content type" field, so route by a **conventio
 
 ---
 
-## 7. NeuroSEO dashboard setup (per site)
+## 7. Seobox dashboard setup (per site)
 
 1. **Sites → [site] → CMS section → choose `Headless`.**
 2. Enter:
-   - `webhook_url` = your receiver URL (e.g. `https://yoursite.com/api/neuroseo-webhook`)
-   - `signing_secret` = the same value as `NEUROSEO_SIGNING_SECRET`
+   - `webhook_url` = your receiver URL (e.g. `https://yoursite.com/api/seobox-webhook`)
+   - `signing_secret` = the same value as `SEOBOX_SIGNING_SECRET`
    - `format` = `markdown`
-3. Connect → NeuroSEO fires a `ping`; your endpoint returns 200 → connected.
+3. Connect → Seobox fires a `ping`; your endpoint returns 200 → connected.
 4. (Optional) In site Settings, set `auto_publish_enabled` + min SEO/quality scores if you want fully hands-off publishing; otherwise you approve each article and hit Publish.
 
 ---
@@ -197,7 +197,7 @@ NeuroSEO's payload has no native "content type" field, so route by a **conventio
 - [ ] A real `post.publish` writes a correctly-frontmattered file to the right folder and commits to the deploy branch.
 - [ ] Re-publishing the same slug updates the existing file (no duplicate).
 - [ ] The article renders on the existing `/blog` (or `/compare` / `/alternatives`) route after deploy with no template changes.
-- [ ] Endpoint returns `{ id, url }`; NeuroSEO shows the blog as `published` with the correct `published_url`.
+- [ ] Endpoint returns `{ id, url }`; Seobox shows the blog as `published` with the correct `published_url`.
 - [ ] Secrets are server-side only; not present in the client bundle.
 
 ---
@@ -209,7 +209,7 @@ For **each** site, record:
 - [ ] Frontmatter schema captured in the §4.3 mapping table
 - [ ] Content-type routing convention chosen (§4.4)
 - [ ] Receiver deployed + env vars set
-- [ ] Connected in NeuroSEO dashboard (§7)
+- [ ] Connected in Seobox dashboard (§7)
 - [ ] End-to-end test article published and verified live
 
 ---
@@ -223,10 +223,10 @@ If some site renders `/blog` from a database instead of files: skip the Git comm
 ## Appendix A — Reference receiver (Next.js App Router)
 
 ```ts
-// app/api/neuroseo-webhook/route.ts
+// app/api/seobox-webhook/route.ts
 import { createHmac, timingSafeEqual } from "crypto";
 
-const SECRET = process.env.NEUROSEO_SIGNING_SECRET!;
+const SECRET = process.env.SEOBOX_SIGNING_SECRET!;
 
 function valid(raw: string, sig: string) {
   const expected = createHmac("sha256", SECRET).update(raw).digest("hex");
@@ -236,10 +236,10 @@ function valid(raw: string, sig: string) {
 
 export async function POST(req: Request) {
   const raw = await req.text();                       // raw body for HMAC
-  const sig = req.headers.get("x-neuroseo-signature") ?? "";
+  const sig = req.headers.get("x-seobox-signature") ?? "";
   if (!valid(raw, sig)) return new Response("bad signature", { status: 401 });
 
-  if (req.headers.get("x-neuroseo-event") === "ping")
+  if (req.headers.get("x-seobox-event") === "ping")
     return Response.json({ ok: true });
 
   const p = JSON.parse(raw);

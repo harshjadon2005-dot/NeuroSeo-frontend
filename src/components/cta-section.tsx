@@ -17,7 +17,7 @@ export function CtaSection() {
                 Start ranking on autopilot
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-base text-white/70 sm:text-lg">
-                Your first articles are on us. Connect a site, pick a keyword, and watch NeuroSEO research, write, and publish.
+                Your first articles are on us. Connect a site, pick a keyword, and watch Seobox research, write, and publish.
               </p>
               <div className="mt-8 flex justify-center">
                 <Button href="/register" size="lg" variant="outline" className="border-0 bg-white text-[#103938] hover:bg-white/90">

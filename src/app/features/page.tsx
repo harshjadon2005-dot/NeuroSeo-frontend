@@ -14,7 +14,7 @@ import {
 } from '@/components/feature-mockups';
 
 export const metadata: Metadata = {
-  title: 'Features — NeuroSEO Platform',
+  title: 'Features — Seobox Platform',
   description: 'Explore the complete suite of AI-powered tools designed to automate your SEO and GEO workflows.',
 };
 
@@ -98,7 +98,7 @@ export default function FeaturesPage() {
             </Reveal>
             <Reveal delay={200}>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                From keyword discovery to one-click CMS publishing. NeuroSEO replaces 5 different tools with one unified, autonomous pipeline.
+                From keyword discovery to one-click CMS publishing. Seobox replaces 5 different tools with one unified, autonomous pipeline.
               </p>
             </Reveal>
           </div>
@@ -150,7 +150,7 @@ export default function FeaturesPage() {
           <div className="mx-auto max-w-3xl text-center mb-16">
             <SectionHeading 
               align="center"
-              title="The NeuroSEO Advantage"
+              title="The Seobox Advantage"
               sub="See why modern marketing teams are migrating from legacy SEO tools."
             />
           </div>
@@ -161,7 +161,7 @@ export default function FeaturesPage() {
                 <thead>
                   <tr className="border-b border-border bg-muted/50">
                     <th className="p-6 font-semibold text-muted-foreground w-1/3">Feature</th>
-                    <th className="p-6 font-bold text-[#103938] w-1/3 border-l border-border">NeuroSEO</th>
+                    <th className="p-6 font-bold text-[#103938] w-1/3 border-l border-border">Seobox</th>
                     <th className="p-6 font-semibold text-muted-foreground w-1/3 border-l border-border">Legacy Tools</th>
                   </tr>
                 </thead>

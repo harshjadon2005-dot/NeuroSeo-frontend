@@ -33,14 +33,14 @@ export function AuthLayout({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-screen w-full bg-[#fcfcfc]">
       {/* Left side (Promotional) */}
       <div className="hidden lg:flex w-1/2 flex-col justify-between bg-[#103938] text-white p-12 lg:p-16 relative overflow-hidden">
-        {/* Subtle grid pattern for NeuroSEO branding */}
+        {/* Subtle grid pattern for Seobox branding */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
         
         {/* Logo */}
         <Link href="/" className="relative z-10 flex items-center gap-2 text-xl font-bold">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="NeuroSEO" className="h-8 w-8 rounded-lg shadow-lg" />
-          NeuroSEO
+          <img src="/logo.png" alt="Seobox" className="h-8 w-8 rounded-lg shadow-lg" />
+          Seobox
         </Link>
 
         {/* Feature Carousel */}
@@ -87,8 +87,8 @@ export function AuthLayout({ children }: { children: React.ReactNode }) {
       <div className="flex w-full lg:w-1/2 flex-col items-center justify-center p-8 sm:p-12 relative bg-[#fcfcfc]">
         <Link href="/" className="absolute top-8 left-8 lg:hidden flex items-center gap-2 text-lg font-bold text-[#103938]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="NeuroSEO" className="h-6 w-6 rounded shadow-sm" />
-          NeuroSEO
+          <img src="/logo.png" alt="Seobox" className="h-6 w-6 rounded shadow-sm" />
+          Seobox
         </Link>
 
         <div className="w-full max-w-sm">

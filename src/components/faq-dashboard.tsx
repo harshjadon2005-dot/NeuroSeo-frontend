@@ -40,7 +40,7 @@ const FAQ_DATA = [
   {
     id: 'how_write',
     categoryId: 'ai_content',
-    q: 'How does NeuroSEO actually write content?',
+    q: 'How does Seobox actually write content?',
     a: 'Every article runs through an 18-stage pipeline: it pulls live SERP data for your keyword, builds an outline against the top results, drafts the body, generates SEO metadata and FAQ schema, adds internal links, then runs originality, AI-detection, and fact-verification checks before scoring SEO and AI visibility. You review the result and publish.',
     tip: 'The 18-stage pipeline runs synchronously. You can watch it stream the outline, draft, and metadata in real time.',
     related: ['originality', 'human', 'brand']
@@ -75,7 +75,7 @@ const FAQ_DATA = [
     id: 'geo',
     categoryId: 'seo_geo',
     q: 'What is "AI visibility" or GEO?',
-    a: 'Generative Engine Optimization. NeuroSEO probes ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews to see whether they cite your brand for your target queries, then scores and tracks that visibility over time.',
+    a: 'Generative Engine Optimization. Seobox probes ChatGPT, Claude, Gemini, Perplexity, and Google AI Overviews to see whether they cite your brand for your target queries, then scores and tracks that visibility over time.',
     tip: 'Focus on targeting specific, long-tail queries; AI engines are much more likely to cite your brand for direct answers than broad topics.',
     related: ['how_write']
   },
@@ -86,7 +86,7 @@ const FAQ_DATA = [
     categoryId: 'integrations',
     q: 'Which CMS platforms can it publish to?',
     a: 'WordPress (REST + Application Passwords), Webflow (CMS API), Shopify (Admin API), and any headless setup via signed webhooks. Approved articles publish in one click, or fully automatically when you enable auto-publish with quality gates.',
-    tip: 'For WordPress, we recommend creating a dedicated Application Password specifically for NeuroSEO rather than using your main admin password.',
+    tip: 'For WordPress, we recommend creating a dedicated Application Password specifically for Seobox rather than using your main admin password.',
     related: ['connect', 'human', 'api_q']
   },
 
@@ -123,7 +123,7 @@ const FAQ_DATA = [
     id: 'api_q',
     categoryId: 'api',
     q: 'Is there an API?',
-    a: 'A full developer API at /v1/api with API-key auth, per-key rate limiting, outbound webhooks for content events, and an OAuth consent flow for connected apps. Generate articles, list content, and wire NeuroSEO into your own tooling.',
+    a: 'A full developer API at /v1/api with API-key auth, per-key rate limiting, outbound webhooks for content events, and an OAuth consent flow for connected apps. Generate articles, list content, and wire Seobox into your own tooling.',
     tip: 'You can subscribe to outbound webhooks to receive real-time notifications when an article passes the review queue and is published.',
     related: ['cms', 'data']
   },
