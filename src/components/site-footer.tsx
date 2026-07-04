@@ -182,7 +182,7 @@ export function SiteFooter() {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 lg:justify-between">
           <div className="w-full lg:max-w-xs shrink-0">
             <Link href="/" className="inline-flex items-center gap-2 transition-opacity hover:opacity-80">
-              <img src="/logo.png" alt="Seobox" className="h-9 w-9 object-contain" />
+              <img src="/logo.png" alt="Seobox" className="h-11 w-11 object-contain" />
               <span className="text-xl font-bold tracking-tight text-white">Seobox</span>
             </Link>
             <p className="mt-5 text-sm leading-relaxed text-white/60 max-w-sm">
