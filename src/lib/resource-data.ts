@@ -30,7 +30,7 @@ export type ResourcePost = {
   
   winner?: string;
   pricing?: { name: string; price: string; details: string }[];
-  features?: { name: string; neuroseo: boolean; competitor: boolean }[];
+  features?: { name: string; seobox: boolean; competitor: boolean }[];
   
   company?: { name: string; industry: string; size: string };
   challenge?: string;

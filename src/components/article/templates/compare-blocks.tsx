@@ -9,7 +9,7 @@ export function CompareBlocks({ post }: { post: ResourcePost }) {
         <div className="rounded-2xl border border-emerald-500/20 bg-emerald-50/50 p-6">
           <div className="mb-4 flex items-center gap-2 font-bold text-emerald-800">
             <Check className="h-5 w-5" />
-            <h3>Pros of {post.winner || 'NeuroSEO'}</h3>
+            <h3>Pros of {post.winner || 'Seobox'}</h3>
           </div>
           <ul className="space-y-3">
             {post.pros?.map((pro, i) => (
@@ -43,7 +43,7 @@ export function CompareBlocks({ post }: { post: ResourcePost }) {
             <thead className="bg-muted/50 text-xs uppercase text-muted-foreground">
               <tr>
                 <th className="px-6 py-4 font-bold">Feature</th>
-                <th className="px-6 py-4 font-bold">NeuroSEO</th>
+                <th className="px-6 py-4 font-bold">Seobox</th>
                 <th className="px-6 py-4 font-bold">Competitor</th>
               </tr>
             </thead>
@@ -52,7 +52,7 @@ export function CompareBlocks({ post }: { post: ResourcePost }) {
                 <tr key={i} className="transition-colors hover:bg-muted/20">
                   <td className="px-6 py-4 font-medium text-foreground">{feature.name}</td>
                   <td className="px-6 py-4">
-                    {feature.neuroseo ? <Check className="h-5 w-5 text-emerald-500" /> : <X className="h-5 w-5 text-muted-foreground/30" />}
+                    {feature.seobox ? <Check className="h-5 w-5 text-emerald-500" /> : <X className="h-5 w-5 text-muted-foreground/30" />}
                   </td>
                   <td className="px-6 py-4">
                     {feature.competitor ? <Check className="h-5 w-5 text-emerald-500" /> : <X className="h-5 w-5 text-muted-foreground/30" />}

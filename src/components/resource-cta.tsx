@@ -25,7 +25,7 @@ export function ResourceCta() {
           
           <Reveal delay={200}>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Stop writing manually. Give NeuroSEO a keyword and watch it research, draft, and publish fully optimized content that ranks and gets cited by AI engines.
+              Stop writing manually. Give Seobox a keyword and watch it research, draft, and publish fully optimized content that ranks and gets cited by AI engines.
             </p>
           </Reveal>
           

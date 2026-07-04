@@ -182,26 +182,26 @@ export function SiteFooter() {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 lg:justify-between">
           <div className="w-full lg:max-w-xs shrink-0">
             <Link href="/" className="inline-flex items-center gap-2 transition-opacity hover:opacity-80">
-              <img src="/logo.png" alt="NeuroSEO" className="h-9 w-9 rounded-lg border border-white/20 bg-white p-1" />
-              <span className="text-xl font-bold tracking-tight text-white">NeuroSEO</span>
+              <img src="/logo.png" alt="Seobox" className="h-11 w-11 object-contain" />
+              <span className="text-xl font-bold tracking-tight text-white">Seobox</span>
             </Link>
             <p className="mt-5 text-sm leading-relaxed text-white/60 max-w-sm">
               Autonomous AI SEO that researches, writes, verifies, and publishes ranking content — continuously.
             </p>
             <div className="mt-8 flex gap-4">
-              <a href="https://linkedin.com/company/neuroseo" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+              <a href="https://linkedin.com/company/seobox" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                 <LinkedinIcon className="h-4 w-4" />
                 <span className="sr-only">LinkedIn</span>
               </a>
-              <a href="https://twitter.com/neuroseo" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+              <a href="https://twitter.com/seobox" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                 <TwitterIcon className="h-4 w-4" />
                 <span className="sr-only">X (Twitter)</span>
               </a>
-              <a href="https://github.com/neuroseo" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+              <a href="https://github.com/seobox" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                 <GithubIcon className="h-4 w-4" />
                 <span className="sr-only">GitHub</span>
               </a>
-              <a href="https://youtube.com/@neuroseo" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+              <a href="https://youtube.com/@seobox" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:bg-emerald-500 hover:text-[#103938] hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                 <YoutubeIcon className="h-4 w-4" />
                 <span className="sr-only">YouTube</span>
               </a>
@@ -235,7 +235,7 @@ export function SiteFooter() {
         {/* ─── BOTTOM BAR ────────────────────────────────────────────────── */}
         <div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-6 sm:flex-row text-xs">
           <p className="text-white/40">
-            © {new Date().getFullYear()} NeuroSEO. All rights reserved.
+            © {new Date().getFullYear()} Seobox. All rights reserved.
           </p>
           
           <p className="hidden text-white/50 lg:block font-medium">

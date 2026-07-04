@@ -13,7 +13,7 @@ export function AlternativesBlocks({ post }: { post: ResourcePost }) {
           </div>
           <div>
             <div className="text-sm font-bold uppercase tracking-wider text-muted-foreground">The Verdict</div>
-            <h3 className="text-2xl font-black text-foreground">Why switch to NeuroSEO?</h3>
+            <h3 className="text-2xl font-black text-foreground">Why switch to Seobox?</h3>
           </div>
         </div>
         
@@ -24,7 +24,7 @@ export function AlternativesBlocks({ post }: { post: ResourcePost }) {
               For Speed & Scale
             </h4>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Instead of manually generating outlines and waiting for writers, NeuroSEO creates entire topical clusters autonomously. Teams scale output without hiring more writers.
+              Instead of manually generating outlines and waiting for writers, Seobox creates entire topical clusters autonomously. Teams scale output without hiring more writers.
             </p>
           </div>
           <div>
@@ -33,7 +33,7 @@ export function AlternativesBlocks({ post }: { post: ResourcePost }) {
               For Semantic Search
             </h4>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Old tools optimize for TF-IDF. NeuroSEO optimizes for LLMs and AI Overviews, ensuring your content is cited by the next generation of search engines.
+              Old tools optimize for TF-IDF. Seobox optimizes for LLMs and AI Overviews, ensuring your content is cited by the next generation of search engines.
             </p>
           </div>
         </div>

@@ -5,8 +5,8 @@ import { Reveal } from '@/components/reveal';
 import { CheckCircle2, AlertCircle, Clock, Bell, Info } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'System Status — NeuroSEO Platform',
-  description: 'Real-time status of NeuroSEO API, Publishing, and Generation services.',
+  title: 'System Status — Seobox Platform',
+  description: 'Real-time status of Seobox API, Publishing, and Generation services.',
 };
 
 const SERVICES = [
@@ -48,7 +48,7 @@ export default function StatusPage() {
                       System Status
                     </h1>
                     <p className="text-muted-foreground text-lg">
-                      Real-time visibility into NeuroSEO's infrastructure and services.
+                      Real-time visibility into Seobox's infrastructure and services.
                     </p>
                   </div>
                   <Link 

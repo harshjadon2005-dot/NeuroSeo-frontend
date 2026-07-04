@@ -18,7 +18,7 @@ export function ArticleSidebar({ post }: ArticleSidebarProps) {
           <div className="h-6 w-6 rounded-md bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30">
             <div className="h-3 w-3 rounded-sm bg-emerald-400" />
           </div>
-          <span className="font-bold tracking-tight">NeuroSEO</span>
+          <span className="font-bold tracking-tight">Seobox</span>
         </div>
         
         <p className="text-slate-300 text-[13px] leading-relaxed font-medium">

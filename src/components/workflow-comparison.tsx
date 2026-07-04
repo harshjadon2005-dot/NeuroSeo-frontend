@@ -10,31 +10,31 @@ const UNIFIED_STEPS = [
     icon: Search, 
     title: 'Keyword Research', 
     traditional: 'Manual search volume check',
-    neuroseo: 'Completed'
+    seobox: 'Completed'
   },
   { 
     icon: ChartColumn, 
     title: 'SERP Analysis', 
     traditional: 'Manual competitor analysis',
-    neuroseo: 'Completed'
+    seobox: 'Completed'
   },
   { 
     icon: FileText, 
     title: 'Outline & Writing', 
     traditional: 'Manual structuring & drafting',
-    neuroseo: 'AI Draft Generation'
+    seobox: 'AI Draft Generation'
   },
   { 
     icon: ShieldCheck, 
     title: 'Editing & Quality', 
     traditional: 'Human review & third-party screening',
-    neuroseo: 'Quality Verification'
+    seobox: 'Quality Verification'
   },
   { 
     icon: Rocket, 
     title: 'Publishing', 
     traditional: 'Manual upload to CMS',
-    neuroseo: 'One-click Publishing'
+    seobox: 'One-click Publishing'
   },
 ];
 
@@ -61,7 +61,7 @@ export function WorkflowComparison() {
               Traditional Workflow
             </div>
             <div className="px-6 py-5 md:px-8 border-l border-[#E8ECEA] text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#103938] bg-emerald-500/5">
-              NeuroSEO
+              Seobox
             </div>
           </div>
 
@@ -92,11 +92,11 @@ export function WorkflowComparison() {
                     </span>
                   </div>
 
-                  {/* NeuroSEO Column */}
+                  {/* Seobox Column */}
                   <div className="p-6 md:px-8 md:py-6 border-l border-[#E8ECEA] bg-emerald-500/5 group-hover:bg-transparent flex flex-col justify-center relative transition-colors duration-250">
                     <div className="flex items-center justify-between w-full">
                       <span className="text-sm font-bold text-[#103938]">
-                        {step.neuroseo}
+                        {step.seobox}
                       </span>
                       <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500 shadow-sm ml-2">
                         <Check className="h-3 w-3 text-white" strokeWidth={3} />

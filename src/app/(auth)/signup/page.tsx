@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Sign Up — NeuroSEO Platform',
+  title: 'Sign Up — Seobox Platform',
   description: 'Create an account to start automating your SEO content.',
 };
 

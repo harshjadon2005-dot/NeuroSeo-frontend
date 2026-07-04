@@ -39,10 +39,10 @@ const MEGA_MENU_DATA = [
   {
     title: 'COMPARE',
     items: [
-      { label: 'NeuroSEO vs Surfer SEO', desc: 'Next-gen vs legacy tools', href: '/resources/compare/neuroseo-vs-surfer-seo', icon: Scale },
-      { label: 'NeuroSEO vs Jasper', desc: 'SEO-focused vs general AI', href: '/resources/compare/jasper', icon: Scale },
-      { label: 'NeuroSEO vs Frase', desc: 'Autonomous vs manual workflow', href: '/resources/compare/frase', icon: Scale },
-      { label: 'NeuroSEO vs ChatGPT', desc: 'Data-driven vs generic output', href: '/resources/compare/chatgpt', icon: Scale },
+      { label: 'Seobox vs Surfer SEO', desc: 'Next-gen vs legacy tools', href: '/resources/compare/seobox-vs-surfer-seo', icon: Scale },
+      { label: 'Seobox vs Jasper', desc: 'SEO-focused vs general AI', href: '/resources/compare/jasper', icon: Scale },
+      { label: 'Seobox vs Frase', desc: 'Autonomous vs manual workflow', href: '/resources/compare/frase', icon: Scale },
+      { label: 'Seobox vs ChatGPT', desc: 'Data-driven vs generic output', href: '/resources/compare/chatgpt', icon: Scale },
     ],
     viewAll: { label: 'View all Comparisons', href: '/resources/compare' }
   },

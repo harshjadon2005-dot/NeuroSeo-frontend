@@ -87,7 +87,7 @@ export function RoadmapHero() {
             transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
             className="text-xl leading-relaxed text-muted-foreground max-w-2xl mx-auto mb-16"
           >
-            Follow the evolution of NeuroSEO. See what we've shipped, what we're actively building, and how we're shaping the future of autonomous publishing.
+            Follow the evolution of Seobox. See what we've shipped, what we're actively building, and how we're shaping the future of autonomous publishing.
           </motion.p>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
