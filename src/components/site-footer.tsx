@@ -119,7 +119,7 @@ export function SiteFooter() {
       <div className="relative z-10 mx-auto max-w-6xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
         
         {/* ─── NEWSLETTER SECTION ────────────────────────────────────────── */}
-        <div className="mx-auto max-w-5xl rounded-[24px] sm:rounded-[32px] border border-white/10 bg-white/[0.02] p-8 lg:p-12 backdrop-blur-sm shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-10">
+        <div id="newsletter" className="mx-auto max-w-5xl rounded-[24px] sm:rounded-[32px] border border-white/10 bg-white/[0.02] p-8 lg:p-12 backdrop-blur-sm shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-10">
           
           <div className="text-center lg:text-left lg:max-w-lg">
             <div className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold tracking-wide text-emerald-300 mb-6">
