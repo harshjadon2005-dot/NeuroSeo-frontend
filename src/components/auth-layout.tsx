@@ -36,8 +36,9 @@ export function AuthLayout({ children }: { children: React.ReactNode }) {
         {/* Subtle grid pattern for Seobox branding */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
         
-        {/* Soft bottom-to-top gradient fade matching the dark theme */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#051615] via-[#0a2524]/60 to-transparent pointer-events-none" />
+        {/* Highly visible bottom-to-top fading effect (Deep shadow + Emerald glow) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#021110] via-[#051c1b]/80 to-transparent pointer-events-none z-0" />
+        <div className="absolute -bottom-1/3 left-1/2 -translate-x-1/2 w-[120%] h-[60%] bg-emerald-400/15 blur-[120px] rounded-[100%] pointer-events-none z-0" />
         
         {/* Logo */}
         <Link href="/" className="relative z-10 flex items-center gap-2 text-xl font-bold text-white">
