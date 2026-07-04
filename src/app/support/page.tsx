@@ -135,9 +135,9 @@ export default function SupportPage() {
                   <p className="text-muted-foreground leading-relaxed">Connect with 5,000+ SEO professionals on our Discord server to share strategies and get help.</p>
                 </div>
               </div>
-              <button className="shrink-0 rounded-full bg-[#5865F2] px-8 py-4 text-sm font-bold text-white transition-all hover:bg-[#4752C4] hover:shadow-lg hover:shadow-[#5865F2]/20 hover:-translate-y-0.5">
+              <a href="https://discord.gg/seobox" target="_blank" rel="noopener noreferrer" className="shrink-0 rounded-full bg-[#5865F2] px-8 py-4 text-sm font-bold text-white transition-all hover:bg-[#4752C4] hover:shadow-lg hover:shadow-[#5865F2]/20 hover:-translate-y-0.5">
                 Join Discord Server
-              </button>
+              </a>
             </div>
           </Reveal>
         </Container>
